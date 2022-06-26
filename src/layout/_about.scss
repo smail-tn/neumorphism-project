@@ -48,10 +48,6 @@
 
     &__skills {
         margin-top: var(--m-10);
-        @include fd("i", "i");
-        flex-wrap: wrap;
-        gap: var(--m-4);
-
         .progress {
             flex: 1 1 30rem;
 

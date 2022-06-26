@@ -506,10 +506,6 @@ p {
 }
 .about__skills {
   margin-top: var(--m-10);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: var(--m-4);
 }
 .about__skills .progress {
   flex: 1 1 30rem;

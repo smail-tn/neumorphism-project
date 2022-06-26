@@ -21,8 +21,8 @@ function replacer(el, class1, class2) {
 navToggler.addEventListener('click', function () {
     let i = this.firstElementChild;
     let nav = document.querySelector('.nav');
-    nav.classList.toggle('show');
     replacer(i, "fa-bars", "fa-times")
+    nav.classList.toggle('show');
     window.onscroll = function () {
         if (nav.classList.contains('show')) {
             nav.classList.remove('show')
@@ -34,21 +34,23 @@ navToggler.addEventListener('click', function () {
 
 
 
-window.addEventListener('scroll', function () {
-    let sections = document.querySelectorAll('.section');
+function ActiveLinks() {
+    let sections = document.querySelectorAll('.section[id');
     let pageTop = window.scrollY;
     sections.forEach(el => {
 
-        let sectionEnd = el.offsetTop + el.clientHeight;
+        let sectionEnd = el.offsetTop + el.offsetHeight;
 
         let link = document.querySelector(`.nav__link[href="#${el.id}"]`);
 
-        let active = document.querySelector('.nav__list .nav__link.active');
-
-
+        
+        
         if (pageTop + 90 >= el.offsetTop && pageTop <= sectionEnd) {
             link.classList.add('active')
 
+            //  remove active class from all links  
+
+            let active = document.querySelector('.nav__list .nav__link.active');
             if (active && active !== link) {
                 active.classList.remove('active')
             }
@@ -56,7 +58,10 @@ window.addEventListener('scroll', function () {
             link.classList.remove('active')
         }
     })
-})
+
+}
+
+window.addEventListener('scroll', ActiveLinks)
 
 
 
