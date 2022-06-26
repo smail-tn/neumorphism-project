@@ -1,0 +1,46 @@
+@mixin fd($ai : flex-start, $jc : flex-start, $fd : row) {
+    display: flex;
+    align-items: if($ai =="i", null, $ai);
+    justify-content: if($jc =="i", null, $jc);
+    flex-direction: if($fd =="i", null, $fd);
+}
+
+
+@mixin flex-center( $jc: center) {
+    display: flex;
+    align-items: center;
+    justify-content: if($jc =="i", null, $jc);
+}
+
+@mixin jc($jc : space-between) {
+    display: flex;
+    justify-content: $jc;
+}
+
+@mixin flex($flex : flex, $ai : center , $jc : space-between) {
+    display: if($flex =="i", null, $flex);
+    align-items: if($ai =="i" , null , $ai);
+    justify-content: if($jc =="i" , null , $jc);
+} 
+@mixin flexAll($ai: center, $jc:space-between, $fd:row , $fw:nowrap ,$gap: 20px ,$flex : initial) {
+    display: flex;
+    align-items: if($ai =="i", null, $ai);
+    justify-content: if($jc =="i", null, $jc);
+    flex-direction: if($fd =="i", null, $fd);
+    flex-wrap: if($fw =="i", null, $fw);
+    gap: if($gap =="i", null, $gap);
+    flex: if($flex =="i" , null  , $flex);
+}
+
+@mixin grid($min: 300px, $max: 1fr, $gap : 20px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min , $max));
+    gap: $gap;
+
+}
+
+@mixin flex-between($ai: center) {
+    display: flex;
+    justify-content: space-between;
+    align-items: if($ai =="i", null, $ai);
+}

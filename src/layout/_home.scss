@@ -1,0 +1,57 @@
+@use '../config/vars' as *;
+
+.home {
+    @include flex-center;
+    height: 100vh;
+    gap: calc(var(--m-10) + 40px);
+    padding-top: 100px;
+    text-align: center;
+    &__content { 
+        @include fd(center ,center ,column) ; 
+        gap: 150px
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: var(--title-clr);
+        font-size: var(--m-10);
+        font-weight: var(--fw-bolder);
+        @include media(sm ,"max") { 
+            font-size: var(--m-6);
+        }
+    }
+
+    &__subtitle {
+        color: var(--primary-clr);
+    }
+
+    &__button {
+        margin-top: var(--m-3);
+    }
+
+    &__social__icon {
+        box-shadow: var(--shadow);
+        @include flex-between;
+        max-width: 300px;
+        padding: var(--m-2);
+        gap: var(--m-3);
+        border-radius: 10px;
+
+        a {
+            display: block;
+            @include box(44px);
+            @include flex-center;
+            box-shadow: var(--shadow);
+            border-radius: 4px;
+            font-size: var(--m-4);
+            @include media(sm ,"max") { 
+                @include box(40px) ;
+                font-size: var(--m-3);
+            }
+
+            &:hover {
+                @include  shadowClr() ;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+@use '../config/vars' as *;
+
+/* ============= BUTTONS ============ */
+.btn {
+    transition: all 0.15s ease-in;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-transform: capitalize;
+    vertical-align: middle;
+    display: inline-block;
+    padding: .5rem .8rem;
+    border-radius: .2rem;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    user-select: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.main-btn { 
+    border-radius: 5px;
+    padding: 12px 40px;
+    color: var(--title-clr);
+    box-shadow: var(--shadow); 
+    &:hover { 
+        @include shadowClr() ;
+    }
+}

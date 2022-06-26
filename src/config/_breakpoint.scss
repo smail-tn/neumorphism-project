@@ -1,0 +1,35 @@
+// Media queries
+$grid-breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl:1400px
+);
+
+@mixin media($size, $type : min) {
+    @if map-has-key($grid-breakpoints, $size ) {
+
+        $width : map-get($grid-breakpoints, $size);
+
+        @if $type ==max {
+            $width : $width - 1;
+        }
+
+        @media only screen and (#{$type}-width : $width) {
+            @content ;
+        }
+
+    }
+}
+
+@mixin media-between($lower, $upper) {
+    @if map-has-key($grid-breakpoints, $lower ) and map-has-key($grid-breakpoints, $upper ) {
+        $lower-breakpoint: map-get($grid-breakpoints, $lower);
+        $upper-breakpoint: map-get($grid-breakpoints, $upper);
+
+        @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+            @content;
+        }
+    }
+}

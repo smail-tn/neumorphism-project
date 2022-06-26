@@ -1,0 +1,134 @@
+@use '../config/vars' as *;
+
+
+.about {
+    &__data {
+        @include flex-center("i");
+        flex-wrap: wrap-reverse;
+        gap: 40px;
+
+
+        .boxs__container {
+            flex: 1 1 40rem;
+            text-align: center;
+
+            .box {
+                box-shadow: var(--shadow);
+                border-radius: 10px;
+                padding: var(--m-5);
+                flex: 1 1 15rem;
+
+                .number {
+                    font-size: var(--m-6);
+                    font-weight: var(--fw-bolder);
+                }
+
+                .job {
+                    font-size: var(--fz-normal);
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .who__am_i {
+            flex: 1 1 40rem;
+            @include fd("i", "i", column);
+            gap: var(--gap-6);
+
+            h1 {
+                font-size: var(--m-6);
+                font-weight: var(--fw-bold);
+            }
+
+            button {
+                align-self: flex-start;
+            }
+        }
+    }
+
+    &__skills {
+        margin-top: var(--m-10);
+        @include fd("i", "i");
+        flex-wrap: wrap;
+        gap: var(--m-4);
+
+        .progress {
+            flex: 1 1 30rem;
+
+            .skill {
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+
+                &__header {
+                    @include flex-between;
+                    margin-bottom: 10px;
+
+                    * {
+                        font-size: var(--m-3);
+                        font-weight: var(--fw-normal)
+                    }
+                }
+
+                &__progress {
+                    @include box(100% 15px);
+                    @include flex-center(start);
+                    padding: 4px;
+                    border-radius: 10px;
+                    width: 100%;
+                    box-shadow: var(--shadow);
+
+                }
+
+                span {
+                    background-color: var(--primary-clr);
+                    display: block;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            &:first-child {
+                .skill:first-child {
+                    span {
+                        width: 95%;
+                    }
+                }
+
+                .skill:nth-child(2) {
+                    span {
+
+                        width: 80%;
+                    }
+                }
+
+                .skill:nth-child(3) {
+                    span {
+                        width: 65%;
+                    }
+                }
+            }
+
+            &:nth-child(2) {
+                .skill:first-child {
+                    span {
+                        width: 90%;
+                    }
+                }
+
+                .skill:nth-child(2) {
+                    span {
+
+                        width: 75%;
+                    }
+                }
+
+                .skill:nth-child(3) {
+                    span {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}

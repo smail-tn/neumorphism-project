@@ -1,0 +1,114 @@
+@use '../config/vars' as *;
+/*=============== REUSABLE CSS CLASSES ===============*/
+h1,
+h3,
+h2,
+h4,
+h5,
+h6 {
+    font-weight: var(--fw-semi);
+    text-transform: capitalize;
+    color: var(--title-clr);
+    letter-spacing: 1px;
+}
+
+a {
+    text-transform: capitalize;
+}
+
+
+
+.container {
+    @include box(900px 100%);
+    @include px(var(--m-3));
+    @include mx(auto);
+    max-width: 95%;
+}
+
+// 100% === 15px
+// 62.5% ==== x 
+// X= 62.5* 16 /100
+.boxs__container {
+    @include flexAll(center, "i", "i", wrap, var(--gap-4), "i");
+}
+
+*>* {
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+.theme__toggler ,
+.nav__toggler { 
+    color: var(--title-clr);
+    background-color: var(--body-clr);
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow);
+    font-size: var(--m-4);
+    @include box(44px) ;
+    position: fixed;
+    top: var(--m-3);
+    @include circle;
+    border: none;
+    @include media(md ,"max")  { 
+        @include box(40px) ;
+        font-size: var(--m-3);
+    }
+    &:hover{ 
+        @include shadowClr() ;
+    }
+}
+.theme__toggler { 
+    right: var(--m-3);
+}
+.nav__toggler { 
+    left: var(--m-3);
+    visibility: hidden;
+    @include media(md ,"max") { 
+        visibility: visible;
+    }
+    
+}
+
+.span__title{ 
+    color: var(--primary-clr);
+}
+
+.btn { 
+
+    color: var(--title-clr);
+}
+p { 
+    line-height: 1.8;
+}
+
+:root {
+    --section-font-size: var(--m-5);
+
+    @include media(md) {
+        --section-font-size: var(--m-10);
+    }
+}
+
+.section {
+    @include py(var(--section-padding));
+    min-height: 100vh;
+
+    &__header {
+        @include mx(auto);
+        width: max-content;
+        margin-bottom: var(--m-8);
+        text-align: center;
+    }
+
+    &__title {
+        font-size: var(--section-font-size);
+        font-weight: var(--fw-bolder);
+        position: relative;
+        @include media(md ,"max") { 
+            font-size: 40px;
+        }
+        .span__title { 
+            color: var(--primary-clr);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@import './breakpoint';
+@import './directions';
+@import './pseudo';
+@import './flex';
+@import './web';
+
+$headings : (
+    h1,h2,h4,h5,h6
+); 
+
+$elements : (
+        img,
+        video,
+        audio,
+        span,
+        label,
+        select,
+        button,
+        input,
+        select,
+        textarea,
+        a
+) ;
+

@@ -1,0 +1,176 @@
+
+
+@mixin directions($x ,$y) {
+    @if (length($x) > 1) {
+        left: nth($x, 1);
+        right: nth($x, length($x));
+    }
+
+    @else {
+        left: nth($x, 1);
+        right: nth($x, 1);
+
+    }
+
+    @if (length($y) > 1) {
+        top: nth($y, 1);
+        bottom: nth($y, length($y));
+    }
+
+    @else {
+        top: nth($y, 1);
+        bottom: nth($y, 1);
+
+    }
+
+}
+
+
+@mixin x($size) {
+    @if (length($size) > 1) {
+        left: nth($size , 1);
+        right: nth($size , length($size));
+    }
+
+    @else {
+        top: $size;
+        bottom: $size;
+    }
+}
+
+@mixin y($size) {
+    @if (length($size ) > 1) {
+        top: nth($size , 1);
+        bottom: nth($size , length($size));
+    }
+
+    @else {
+        top: $size;
+        bottom: $size;
+    }
+}
+
+@mixin my($size) {
+    @if (length($size ) > 1) {
+        margin-top: nth($size , 1);
+        margin-bottom: nth($size , length($size));
+    }
+
+    @else {
+        margin-top: $size;
+        margin-bottom: $size;
+    }
+}
+
+@mixin mx($size) {
+    @if (length($size) > 1) {
+        margin-left: nth($size , 1);
+        margin-right: nth($size , length($size));
+    }
+
+    @else {
+        margin-left: $size;
+        margin-right: $size;
+    }
+}
+
+@mixin py($size) {
+    @if (length($size ) > 1) {
+        padding-top: nth($size , 1);
+        padding-bottom: nth($size , length($size));
+    }
+
+    @else {
+        padding-top: $size;
+        padding-bottom: $size;
+    }
+}
+
+@mixin px($size) {
+    @if (length($size) > 1) {
+        padding-left: nth($size , 1);
+        padding-right: nth($size , length($size));
+    }
+
+    @else {
+        padding-left: $size;
+        padding-right: $size;
+    }
+}
+
+
+@mixin vertical-center($po: absolute) {
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: $po;
+    top: 50%;
+}
+
+@mixin horizontal-center($po: absolute) {
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: $po;
+    left: 50%;
+}
+
+@mixin transform-center($po : absolute) {
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: $po;
+    left: 50%;
+    top: 50%
+}
+
+@mixin top-left($size) {
+    @if (length($size ) > 1) {
+        top: nth($size , 1);
+        left: nth($size , length($size));
+    }
+
+    @else {
+        top: $size;
+        left: $size;
+    }
+
+}
+@mixin top-right($size) {
+    @if (length($size ) > 1) {
+        top: nth($size , 1);
+        right: nth($size , length($size));
+    }
+
+    @else {
+        top: $size;
+        right: $size;
+    }
+
+}
+
+@mixin bottom-right($size) {
+        @if (length($size ) > 1) {
+            bottom: nth($size , 1);
+            right: nth($size , length($size));
+        }
+
+        @else {
+            bottom: $size;
+            right: $size;
+        }
+    
+}
+@mixin bottom-left($size) {
+    @if (length($size ) > 1) {
+        bottom: nth($size , 1);
+        left: nth($size , length($size));
+    }
+
+    @else {
+        bottom: $size;
+        left: $size;
+    }
+
+}
+

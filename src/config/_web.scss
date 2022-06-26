@@ -1,0 +1,6 @@
+
+
+@mixin shadowClr($clr: var(--primary-clr),$sh:var(--shadow-inset)) {
+    color: $clr; 
+    box-shadow: var(--shadow-inset);
+}

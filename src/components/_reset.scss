@@ -1,0 +1,55 @@
+/*===== BASE =====*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  &,
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+img,
+video,
+audio,
+span,
+label,
+select,
+button,
+input,
+select,
+textarea,
+a {
+  display: inline-block;
+}
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input {
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
