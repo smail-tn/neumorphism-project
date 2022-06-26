@@ -1,15 +1,14 @@
-@use './config/vars' as *;
-//  importing components 
+@use "./config/vars" as *;
+//  importing components
 
+@use "./components/reset";
+@use "./components/body";
+@use "./components/reusable";
+@use "./components/buttons";
+@use "./components/scroll";
 
-@use './components/reset';
-@use './components/body';
-@use './components/reusable';
-@use './components/buttons';
-@use './components/scroll';
-
-//  importing sections 
-@use './layout/header';
-@use './layout/home';
-@use './layout/about';
-@use './layout/services';
+//  importing sections
+@use "./layout/header";
+@use "./layout/home";
+@use "./layout/about";
+@use "./layout/services";

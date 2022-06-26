@@ -1,71 +1,70 @@
-@use '../config/vars' as *;
+@use "../config/vars" as *;
 
 .nav {
-    z-index: 2;
-    @include fd(center, "i", column);
-    background-color: var(--body-clr);
-    transition: var(--transition-fast);
-    border-right: var(--border);
-    width: var(--header-spacer);
-    @include top-left(0);
-    padding: var(--m-3);
-    gap: var(--gap-2);
-    height: 100vh;
-    position: fixed;
+  z-index: 2;
+  @include fd(center, "i", column);
+  background-color: var(--body-clr);
+  transition: var(--transition-fast);
+  border-right: var(--border);
+  width: var(--header-spacer);
+  @include top-left(0);
+  padding: var(--m-3);
+  gap: var(--gap-2);
+  height: 100vh;
+  position: fixed;
 
-    @include media(md, "max") {
-        left: -100%;
+  @include media(md, "max") {
+    left: -100%;
 
-        &.show {
-            left: -0px;
-        }
-
-        &__toggler {
-            visibility: visible;
-        }
-
+    &.show {
+      left: -0px;
     }
 
-    &__info {
-        margin-bottom: 10px;
+    &__toggler {
+      visibility: visible;
+    }
+  }
 
-        .job {
-            color: var(--primary-clr)
-        }
+  &__info {
+    margin-bottom: 10px;
+
+    .job {
+      color: var(--primary-clr);
+    }
+  }
+
+  &__logo {
+    border: 10px solid var(--body-clr);
+    box-shadow: var(--shadow);
+    @include box(150px);
+    @include circle;
+    overflow: hidden;
+  }
+
+  &__list {
+    @include fd("i", "i", column);
+    text-align: center;
+    gap: var(--m-2);
+    width: 100%;
+  }
+
+  &__item {
+    flex: 1;
+  }
+
+  &__link {
+    box-shadow: var(--shadow);
+    color: var(--title-clr);
+    font-size: var(--m-3);
+    padding: var(--m-2);
+    border-radius: 20px;
+    display: block;
+    &.active {
+      @include shadowClr();
     }
 
-    &__logo {
-        border: 10px solid var(--body-clr);
-        box-shadow: var(--shadow);
-        @include box(150px);
-        @include circle;
-        overflow: hidden;
+    &:hover {
+      @include shadowClr();
     }
-
-    &__list {
-        @include fd("i", "i", column);
-        text-align: center;
-        gap: var(--m-2);
-        width: 100%;
-    }
-
-    &__item {
-        flex: 1;
-    }
-
-    &__link {
-        box-shadow: var(--shadow);
-        color: var(--title-clr);
-        font-size: var(--m-3);
-        padding: var(--m-2);
-        border-radius: 20px;
-        display: block;
-        &.active { 
-            @include shadowClr() ;
-        }
-
-        &:hover {
-            @include shadowClr();
-        }
-    }
+  }
 }

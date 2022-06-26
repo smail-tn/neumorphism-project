@@ -2,78 +2,77 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-    /* ===== NAVIGATION SITTINGS ==== */
-    --header-spacer: 30rem;
-    /* ======= BODY PROPERTIES ====== */
-    --body-font: "Open sans", sans-serif;
-    --line-height: 1.5;
+  /* ===== NAVIGATION SITTINGS ==== */
+  --header-spacer: 30rem;
+  /* ======= BODY PROPERTIES ====== */
+  --body-font: "Open sans", sans-serif;
+  --line-height: 1.5;
 
-    /* =========== clrS =========== */
-    /* Change favorite clr */
-    --border: 0.1rem solid #00000033;
-    --primary-clr: #fe0477;
-    --body-clr: #e6e6e6;
-    --title-clr: #444;
-    --text-clr: #777;
-    //   Shadow
-    --shadow: .4rem .4rem 1rem #ccc, -.4rem -.4rem 1rem #fff;
-    --shadow-inset: .4rem .4rem 1rem #ccc inset, -.4rem -.4rem 1rem #fff inset;
-    --section-padding: 6rem;
-    /* ========= TRANSITION ========= */
-    --transition: all 0.4s ease-in-out;
-    --transition-fast: all 0.2s ease-in-out;
-    /* ============= FONT ============ */
+  /* =========== clrS =========== */
+  /* Change favorite clr */
+  --border: 0.1rem solid #00000033;
+  --primary-clr: #fe0477;
+  --body-clr: #e6e6e6;
+  --title-clr: #444;
+  --text-clr: #777;
+  //   Shadow
+  --shadow: 0.4rem 0.4rem 1rem #ccc, -0.4rem -0.4rem 1rem #fff;
+  --shadow-inset: 0.4rem 0.4rem 1rem #ccc inset, -0.4rem -0.4rem 1rem #fff inset;
+  --section-padding: 6rem;
+  /* ========= TRANSITION ========= */
+  --transition: all 0.4s ease-in-out;
+  --transition-fast: all 0.2s ease-in-out;
+  /* ============= FONT ============ */
 
-    --fz-normal: 12px;
-    --fz-small: 11px;
-    --fz-smaller: 10px;
+  --fz-normal: 12px;
+  --fz-small: 11px;
+  --fz-smaller: 10px;
 
-    /* ====== FONT MEDIA QUERY ====== */
+  /* ====== FONT MEDIA QUERY ====== */
 
+  @include media(xl) {
+    --fz-normal: 13px;
+    --fz-small: 12px;
+    --fz-smaller: 11px;
+  }
 
-    @include media(xl) {
-        --fz-normal: 13px;
-        --fz-small: 12px;
-        --fz-smaller: 11px;
-    }
+  @include media(xxl) {
+    --fz-normal: 14px;
+    --fz-small: 13px;
+    --fz-smaller: 12px;
+  }
 
-    @include media(xxl) {
-        --fz-normal: 14px;
-        --fz-small: 13px;
-        --fz-smaller: 12px;
-    }
-
-    /* ========= FONT WEIGHT ======== */
-    --fw-normal: 400;
-    --fw-medium: 500;
-    --fw-semi: 600;
-    --fw-bold: 700;
-    --fw-bolder: 900;
-    /* ==== MARGINS AND PADDINGS ==== */
-    --m-1: 0.5rem;
-    --m-2: 1rem;
-    --m-3: 1.5rem;
-    --m-4: 2rem;
-    --m-5: 2.5rem;
-    --m-6: 3rem;
-    --m-7: 3.5rem;
-    --m-8: 4rem;
-    --m-9: 4.5rem;
-    --m-10: 5rem;
-    /*========== z index ==========*/
-    --z-back: -10;
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
-    /* ============= GAP ============ */
-    --gap-1: 0.5rem;
-    --gap-2: 1rem;
-    --gap-3: 1.5rem;
-    --gap-4: 2rem;
-    --gap-5: 2.5rem;
-    --gap-6: 3rem;
-    --gap-7: 3.5rem;
-    --gap-8: 4rem;
-    --gap-9: 4.5rem;
-    --gap-10: 5rem;
+  /* ========= FONT WEIGHT ======== */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semi: 600;
+  --fw-bold: 700;
+  --fw-bolder: 900;
+  /* ==== MARGINS AND PADDINGS ==== */
+  --m-1: 0.5rem;
+  --m-2: 1rem;
+  --m-3: 1.5rem;
+  --m-4: 2rem;
+  --m-5: 2.5rem;
+  --m-6: 3rem;
+  --m-7: 3.5rem;
+  --m-8: 4rem;
+  --m-9: 4.5rem;
+  --m-10: 5rem;
+  /*========== z index ==========*/
+  --z-back: -10;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+  /* ============= GAP ============ */
+  --gap-1: 0.5rem;
+  --gap-2: 1rem;
+  --gap-3: 1.5rem;
+  --gap-4: 2rem;
+  --gap-5: 2.5rem;
+  --gap-6: 3rem;
+  --gap-7: 3.5rem;
+  --gap-8: 4rem;
+  --gap-9: 4.5rem;
+  --gap-10: 5rem;
 }

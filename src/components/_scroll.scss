@@ -1,14 +1,14 @@
-@use '../config/vars' as *;
+@use "../config/vars" as *;
 ::-webkit-scrollbar {
-    @include box(8px) ;
+  @include box(8px);
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: var(--primary-clr);
+  border-radius: 10px;
+  background-color: var(--primary-clr);
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--body-clr);
-    // border-radius: 10px;
+  background-color: var(--body-clr);
+  // border-radius: 10px;
 }
