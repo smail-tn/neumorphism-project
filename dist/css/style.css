@@ -59,7 +59,7 @@
 }
 @media only screen and (max-width: 575px) {
   :root {
-    --header-spacer: 20rem;
+    --header-spacer: 25rem;
   }
 }
 @media only screen and (min-width: 1200px) {

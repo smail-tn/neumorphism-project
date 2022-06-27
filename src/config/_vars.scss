@@ -4,9 +4,8 @@
 :root {
   /* ===== NAVIGATION SITTINGS ==== */
   --header-spacer: 29rem;
-  @include media(sm ,"max") { 
-    --header-spacer: 20rem;
-    
+  @include media(sm, "max") {
+    --header-spacer: 25rem;
   }
   /* ======= BODY PROPERTIES ====== */
   --body-font: "Open sans", sans-serif;
