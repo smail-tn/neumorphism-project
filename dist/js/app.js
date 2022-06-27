@@ -3,9 +3,7 @@ let themeToggler = document.querySelector(".theme__toggler");
 let navToggler = document.querySelector(".nav__toggler");
 
 themeToggler.addEventListener("click", function () {
-  let i = this.firstElementChild;
-  replacer(i, "fa-moon", "fa-sun");
-  // Toggler dark theme class
+  replacer(this.firstElementChild, "fa-moon", "fa-sun");
   document.body.classList.toggle("dark-theme");
 });
 
@@ -16,6 +14,8 @@ function replacer(el, class1, class2) {
     el.classList.replace(class2, class1);
   }
 }
+
+//  navbar  toggler
 
 navToggler.addEventListener("click", function () {
   let i = this.firstElementChild;
@@ -31,6 +31,8 @@ navToggler.addEventListener("click", function () {
   });
 });
 
+// activate links on scroll
+
 function ActiveLinks() {
   let sections = document.querySelectorAll(".section[id");
   let pageTop = window.scrollY;
@@ -43,7 +45,6 @@ function ActiveLinks() {
       link.classList.add("active");
 
       //  remove active class from all links
-
       let active = document.querySelector(".nav__list .nav__link.active");
       if (active && active !== link) {
         active.classList.remove("active");
