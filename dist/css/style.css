@@ -681,15 +681,9 @@ p {
   width: 990px;
   border-radius: 20px;
   gap: var(--m-10);
-  align-items: center;
 }
 .faq > * {
   flex: 1 1 30rem;
-}
-.faq .image {
-  height: fi;
-  align-self: center;
-  justify-self: center;
 }
 
 .accordion__feild > h1 {
