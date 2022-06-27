@@ -22,14 +22,13 @@ navToggler.addEventListener("click", function () {
   let nav = document.querySelector(".nav");
   replacer(i, "fa-bars", "fa-times");
   nav.classList.toggle("show");
-  document.body.classList.toggle('spacer');
-  nav.querySelectorAll('.nav__link').forEach(el=> {
-    el.onclick = function() { 
-      nav.classList.remove('show') ; 
+  document.body.classList.toggle("spacer");
+  nav.querySelectorAll(".nav__link").forEach((el) => {
+    el.onclick = function () {
+      nav.classList.remove("show");
       replacer(i, "fa-bars", "fa-times");
-      
-    }
-  })
+    };
+  });
 });
 
 function ActiveLinks() {
