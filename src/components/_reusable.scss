@@ -16,18 +16,17 @@ a {
   text-transform: capitalize;
 }
 
-.container {
-  @include box(900px 100%);
-  @include px(var(--m-3));
-  @include mx(auto);
-  max-width: 95%;
-}
-
 // 100% === 15px
 // 62.5% ==== x
 // X= 62.5* 16 /100
 .boxs__container {
   @include flexAll(center, "i", "i", wrap, var(--gap-4), "i");
+}
+.container {
+  @include box(100%);
+  @include px(var(--m-3));
+  @include mx(auto);
+  max-width: 90%;
 }
 
 * > * {
@@ -38,13 +37,11 @@ a {
 .theme__toggler,
 .nav__toggler {
   color: var(--title-clr);
-  background-color: var(--body-clr);
+  background-color: var(--body-clr) !important;
   transition: var(--transition-fast);
   box-shadow: var(--shadow);
   font-size: var(--m-4);
   @include box(44px);
-  position: fixed;
-  top: var(--m-3);
   @include circle;
   border: none;
   @include media(md, "max") {
@@ -56,14 +53,9 @@ a {
   }
 }
 .theme__toggler {
+  position: fixed;
+  top: var(--m-3);
   right: var(--m-3);
-}
-.nav__toggler {
-  left: var(--m-3);
-  visibility: hidden;
-  @include media(md, "max") {
-    visibility: visible;
-  }
 }
 
 .span__title {

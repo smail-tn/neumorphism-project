@@ -14,7 +14,7 @@
   &__title {
     text-transform: uppercase;
     color: var(--title-clr);
-    font-size: var(--m-10);
+    font-size: var(--m-6);
     font-weight: var(--fw-bolder);
     @include media(sm, "max") {
       font-size: var(--m-6);
@@ -23,6 +23,7 @@
 
   &__subtitle {
     color: var(--primary-clr);
+    font-size:var(--m-3) ;
   }
 
   &__button {

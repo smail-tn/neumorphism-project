@@ -1,10 +1,10 @@
 @use "../config/vars" as *;
 
 .nav {
-  z-index: 2;
+  transform: translateX(calc(-1 * var(--header-spacer)));
   @include fd(center, "i", column);
   background-color: var(--body-clr);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   border-right: var(--border);
   width: var(--header-spacer);
   @include top-left(0);
@@ -12,33 +12,41 @@
   gap: var(--gap-2);
   height: 100vh;
   position: fixed;
+  z-index: 2;
+  &.show {
+    transform: translateX(0);
+  }
 
-  @include media(md, "max") {
-    left: -100%;
-
-    &.show {
-      left: -0px;
-    }
-
-    &__toggler {
-      visibility: visible;
-    }
+  &__toggler {
+    position: absolute;
+    --width: 50px;
+    right: calc(-1 * (var(--m-3) + var(--width)));
   }
 
   &__info {
     margin-bottom: 10px;
-
+    .name { 
+      font-size: var(--m-3);
+    }
     .job {
       color: var(--primary-clr);
+      font-size: var(--m-2);
     }
   }
 
   &__logo {
     border: 10px solid var(--body-clr);
     box-shadow: var(--shadow);
-    @include box(150px);
-    @include circle;
-    overflow: hidden;
+    @include box(140px !important);
+    img{ 
+      @include circle;
+    }
+    & {
+      @include circle;
+      @include media(sm, "max") {
+        @include box(100px !important);
+      }
+    }
   }
 
   &__list {
@@ -46,6 +54,9 @@
     text-align: center;
     gap: var(--m-2);
     width: 100%;
+    @include media(sm  , "max") { 
+      gap: var(--gap-6);
+    }
   }
 
   &__item {
@@ -59,6 +70,10 @@
     padding: var(--m-2);
     border-radius: 20px;
     display: block;
+    @include media(sm ,"max") {
+      font-size:var(--fz-normal);
+    }
+
     &.active {
       @include shadowClr();
     }
