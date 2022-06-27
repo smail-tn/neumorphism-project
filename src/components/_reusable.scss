@@ -26,7 +26,7 @@ a {
   @include box(100%);
   @include px(var(--m-3));
   @include mx(auto);
-  max-width: 90%;
+  max-width: 95%;
 }
 
 * > * {
@@ -82,12 +82,8 @@ p {
   min-height: 100vh;
 
   &__header {
-    @include mx(auto);
-    width: max-content;
-    margin-bottom: var(--m-8);
-    text-align: center;
+    margin-bottom: var(--m-10);
   }
-
   &__title {
     font-size: var(--section-font-size);
     font-weight: var(--fw-bolder);
@@ -95,8 +91,11 @@ p {
     @include media(md, "max") {
       font-size: 40px;
     }
-    .span__title {
-      color: var(--primary-clr);
-    }
   }
+}
+
+.divider {
+  height: 1px;
+  border-top: var(--border);
+  opacity: 0.5;
 }

@@ -2,13 +2,30 @@
 
 .services {
   &__data {
+    gap: var(--m-10);
     .card {
+      @include flex-center() ; 
+      flex-direction: column;
+      transition: var(--transition-fast);
+      gap: var(--gap-3);
       box-shadow: var(--shadow);
-      border-radius: 10px;
-      padding: var(--m-4);
+      border-radius: var(--m-4);
+      padding: var(--m-6);
       position: relative;
       overflow: hidden;
       flex: 1 1 25rem;
+      &:first-child { 
+        background-color: var(--clr-violet);
+      }
+      &:nth-child(2){ 
+        background-color: var(--clr-yellow);
+        .card__p { 
+          color: var(--title-clr);
+        }
+      }
+      &:nth-child(3){ 
+        background-color: var(--clr-pink);
+      }
 
       &::after {
         background-color: var(--primary-clr);
@@ -21,19 +38,27 @@
       }
 
       &:hover {
-        * {
-          color: white !important;
-        }
-
-        &::after {
-          bottom: 0;
-        }
+        transform: translateY(-10px);
       }
 
       &__img {
         color: var(--primary-clr);
-        margin-bottom: 30px;
       }
+      &__title{ 
+        color: white;
+        font-weight: var(--fw-bold);
+      }
+      &__p { 
+        color: #f2f2f2;
+      }
+    }
+  }
+  &__end { 
+    text-align: center;
+    margin-top: var(--m-10);
+    a{ 
+      color: var(--primary-clr);
+      @include mx(5px) ;
     }
   }
 }
