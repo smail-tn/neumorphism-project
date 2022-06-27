@@ -1,0 +1,86 @@
+@use "../config/vars" as *;
+
+.faq {
+    
+    width: 990px;
+    border-radius: 20px;
+    gap: var(--m-10);
+    &>* { 
+        flex: 1 1 30rem;
+    }
+    .image { 
+        max-width: 500px;
+    }
+
+}
+
+.accordion__feild {
+    &>h1 {
+        text-align: center;
+        @include my(var(--m-10));
+        font-size: 30px;
+        font-weight: 900;
+    }
+}
+
+.accordion {
+    @include py(var(--m-4));
+
+    &__item {
+        overflow: hidden;
+        margin-bottom: 10px;
+        box-shadow: var(--shadow);
+        border-radius: 10px;
+
+        &.open {
+            .accordion__header {
+                &__title {
+                    font-weight: 600;
+                    color: var(--primary-clr);
+                }
+
+                &__arrow {
+                    .icon {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__header {
+        cursor: pointer;
+        @include flex-between();
+        padding: 20px;
+        
+        &__title {
+            transition: var(--transition-fast);
+            font-weight: 400;
+        }
+        
+        &__arrow {
+            font-size: var(--m-3);
+        }
+    }
+    
+    &__body {
+        transition: var(--transition);
+        border-top: var(--border);
+        height: 0;
+
+        .description {
+            @include py(var(--m-4));
+            margin-left: 20px;
+            @include px(20px);
+            position: relative;
+
+            &::after {
+                background-color: var(--primary-clr);
+                @include vertical-center;
+                @include top-left(50% 0);
+                @include box(3px 50%);
+                @include pseudo();
+            }
+        }
+    }
+}
