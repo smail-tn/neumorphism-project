@@ -25,7 +25,7 @@
 
   &__info {
     margin-bottom: 10px;
-    .name { 
+    .name {
       font-size: var(--m-3);
     }
     .job {
@@ -37,14 +37,14 @@
   &__logo {
     border: 10px solid var(--body-clr);
     box-shadow: var(--shadow);
-    @include box(140px !important);
-    img{ 
+    @include box(140px);
+    img {
       @include circle;
     }
     & {
       @include circle;
       @include media(sm, "max") {
-        @include box(100px !important);
+        @include box(100px);
       }
     }
   }
@@ -54,7 +54,7 @@
     text-align: center;
     gap: var(--m-2);
     width: 100%;
-    @include media(sm  , "max") { 
+    @include media(sm, "max") {
       gap: var(--gap-6);
     }
   }
@@ -70,14 +70,11 @@
     padding: var(--m-2);
     border-radius: 20px;
     display: block;
-    @include media(sm ,"max") {
-      font-size:var(--fz-normal);
+    @include media(sm, "max") {
+      font-size: var(--fz-normal);
     }
 
-    &.active {
-      @include shadowClr();
-    }
-
+    &.active,
     &:hover {
       @include shadowClr();
     }

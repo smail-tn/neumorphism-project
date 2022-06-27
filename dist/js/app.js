@@ -31,6 +31,29 @@ navToggler.addEventListener("click", function () {
   });
 });
 
+//    scroll indicator
+
+let scrollUp = document.querySelector(".scroll__top");
+
+scrollUp.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+function scrollIndicator() {
+  let pageHeight = document.documentElement.scrollHeight;
+  let height = pageHeight - document.documentElement.clientHeight;
+  let partialScroll = window.scrollY;
+
+  let scrollUp = document.querySelector(".scroll__top");
+
+  let indicator = Math.round((partialScroll / height) * 100);
+
+  scrollUp.style.background = `conic-gradient(var(--primary-clr) ${indicator}% ,  var(--body-clr)  ${indicator}% )`;
+
+  if (partialScroll > 300) scrollUp.classList.add("show");
+  else scrollUp.classList.remove("show");
+}
+
+window.addEventListener("scroll", scrollIndicator);
+
 // activate links on scroll
 
 function ActiveLinks() {

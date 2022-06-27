@@ -26,7 +26,10 @@ a {
   @include box(100%);
   @include px(var(--m-3));
   @include mx(auto);
-  max-width: 95%;
+  max-width: 80%;
+  @include media(sm, "max") {
+    max-width: 95%;
+  }
 }
 
 * > * {
@@ -42,6 +45,7 @@ a {
   box-shadow: var(--shadow);
   font-size: var(--m-4);
   @include box(44px);
+  z-index: 10;
   @include circle;
   border: none;
   @include media(md, "max") {
@@ -89,7 +93,10 @@ p {
     font-weight: var(--fw-bolder);
     position: relative;
     @include media(md, "max") {
-      font-size: 40px;
+      font-size: 30px;
+    }
+    @include media(sm, "max") {
+      font-size: 25px;
     }
   }
 }
