@@ -628,7 +628,7 @@ p {
   padding: var(--m-6);
   position: relative;
   overflow: hidden;
-  flex: 1 1 25rem;
+  flex: 1 1 20rem;
 }
 .services__data .card:first-child {
   background-color: var(--clr-violet);
