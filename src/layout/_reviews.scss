@@ -1,0 +1,53 @@
+@use "../config/vars" as *;
+
+.carousel {
+  @include mx(auto);
+  position: relative;
+  height: 100%;
+  &__inner {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+  }
+
+  &__slider {
+    position: relative;
+    @include box(100%);
+    display: flex;
+  }
+
+  &__slide {
+    @include box(100%);
+    padding: var(--m-4);
+    flex: none;
+    .slide__info {
+      @include fd(center, "i", column);
+      gap: var(--m-2);
+      margin-bottom: 10px;
+      img {
+        width: 120px;
+      }
+    }
+    .slide__text {
+      max-width: 500px;
+      @include mx(auto);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: var(--m-4);
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--m-4);
+    button {
+      background-color: var(--body-clr) !important;
+
+      &.delay {
+        pointer-events: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

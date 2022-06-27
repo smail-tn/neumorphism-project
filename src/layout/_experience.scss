@@ -17,17 +17,19 @@
             margin-bottom: var(--m-10);
           }
         }
+        &::after,
+        &::before {
+          background-color: var(--primary-clr);
+          @include pseudo();
+          @include top-left(0);
+        }
         &::after {
-            background-color: var(--primary-clr);
-            @include box(3px 100%);
-            @include top-left(0);
-            @include pseudo();
+          @include box(3px 100%);
+          border-radius: 20px;
         }
         &::before {
-            background-color: var(--primary-clr);
-            @include top-left(0 -9px);
-            @include box(20px);
-          @include pseudo();
+          left: -9px;
+          @include box(20px);
           @include circle;
         }
         .date {
