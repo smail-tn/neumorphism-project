@@ -697,10 +697,6 @@ p {
   font-weight: 900;
 }
 
-.accordion {
-  padding-top: var(--m-4);
-  padding-bottom: var(--m-4);
-}
 .accordion__item {
   overflow: hidden;
   margin-bottom: 10px;
