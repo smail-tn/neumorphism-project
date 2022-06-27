@@ -26,7 +26,7 @@ navToggler.addEventListener("click", function () {
   nav.querySelectorAll(".nav__link").forEach((el) => {
     el.onclick = function () {
       document.body.classList.remove("spacer");
-      i.classList.replace("fa-times","fa-bars");      
+      i.classList.replace("fa-times", "fa-bars");
       nav.classList.remove("show");
     };
   });
