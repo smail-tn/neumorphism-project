@@ -20,13 +20,12 @@ function replacer(el, class1, class2) {
 navToggler.addEventListener("click", function () {
   let i = this.firstElementChild;
   let nav = document.querySelector(".nav");
-  replacer(i, "fa-bars", "fa-times");
   nav.classList.toggle("show");
   document.body.classList.toggle("spacer");
+
   nav.querySelectorAll(".nav__link").forEach((el) => {
     el.onclick = function () {
       document.body.classList.remove("spacer");
-      i.classList.replace("fa-times", "fa-bars");
       nav.classList.remove("show");
     };
   });
