@@ -678,22 +678,23 @@ p {
 }
 
 .faq {
-  width: 990px;
   border-radius: 20px;
+}
+.faq .image {
+  width: 400px;
+}
+@media only screen and (max-width: 575px) {
+  .faq .image {
+    width: initial;
+  }
+}
+
+.accordion__field {
   gap: var(--m-10);
 }
-.faq > * {
+.accordion__field > * {
   flex: 1 1 30rem;
 }
-
-.accordion__feild > h1 {
-  text-align: center;
-  margin-top: var(--m-10);
-  margin-bottom: var(--m-10);
-  font-size: 30px;
-  font-weight: 900;
-}
-
 .accordion__item {
   overflow: hidden;
   margin-bottom: 10px;
@@ -712,7 +713,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
 }
 .accordion__header__title {
   transition: var(--transition-fast);

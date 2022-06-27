@@ -1,24 +1,21 @@
 @use "../config/vars" as *;
 
 .faq {
-  width: 990px;
   border-radius: 20px;
-  gap: var(--m-10);
-  & > * {
-    flex: 1 1 30rem;
+  .image {
+    width: 400px;
+    @include media(sm, "max") {
+      width: initial;
+    }
   }
 }
-
-.accordion__feild {
-  & > h1 {
-    text-align: center;
-    @include my(var(--m-10));
-    font-size: 30px;
-    font-weight: 900;
-  }
-}
-
 .accordion {
+  &__field {
+    gap: var(--m-10);
+    & > * {
+      flex: 1 1 30rem;
+    }
+  }
   &__item {
     overflow: hidden;
     margin-bottom: 10px;
@@ -44,7 +41,7 @@
   &__header {
     cursor: pointer;
     @include flex-between();
-    padding: 20px;
+    padding: 15px 20px;
 
     &__title {
       transition: var(--transition-fast);
