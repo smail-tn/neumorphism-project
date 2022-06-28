@@ -56,73 +56,61 @@ window.addEventListener("scroll", scrollIndicator);
 
 // activate links on scroll
 
-function ActiveLinks() {
-  let sections = document.querySelectorAll(".section[id");
-  let pageTop = document.documentElement.scrollTop;
-  sections.forEach((el) => {
-    let sectionEnd = el.offsetTop + el.offsetHeight;
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 
-    let link = document.querySelector(`.nav__link[href="#${el.id}"]`);
+const sections = document.querySelectorAll(".section[id]");
 
-    if (pageTop + 90 >= el.offsetTop && pageTop <= sectionEnd - 100) {
+function scrollActive() {
+  const scrollY = window.pageYOffset;
+  sections.forEach((current) => {
+    let link = document.querySelector(`.nav__link[href*="#${current.id}"]`);
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58;
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       link.classList.add("active");
-
-      //  remove active class from all links
-      let active = document.querySelector(".nav__list .nav__link.active");
-      if (active && active !== link) {
-        active.classList.remove("active");
-      }
     } else {
       link.classList.remove("active");
     }
   });
 }
+window.addEventListener("scroll", scrollActive);
 
-window.addEventListener("scroll", ActiveLinks);
+// faq
 
-
-
-
-// faq   
-
-const
-    accordion__items =
-        [...document.querySelectorAll(" .accordion .accordion__item")];
-window.addEventListener('load', function () {
-    if (accordion__items[0].classList.contains('open')) {
-        accordion__items[0].lastElementChild.style.height =
-            accordion__items[0].lastElementChild.scrollHeight + "px";
-    }
-})
+const accordion__items = [
+  ...document.querySelectorAll(" .accordion .accordion__item"),
+];
+window.addEventListener("load", function () {
+  if (accordion__items[0].classList.contains("open")) {
+    accordion__items[0].lastElementChild.style.height =
+      accordion__items[0].lastElementChild.scrollHeight + "px";
+  }
+});
 
 accordion__items.forEach((item) => {
-    header = item.querySelector(".accordion__header");
-    header.addEventListener("click", () => {
-        opened = document.querySelector(".accordion__item.open");
-        toggler(item);
-        if (opened && opened !== item) {
-            toggler(opened);
-        }
-    });
+  header = item.querySelector(".accordion__header");
+  header.addEventListener("click", () => {
+    opened = document.querySelector(".accordion__item.open");
+    toggler(item);
+    if (opened && opened !== item) {
+      toggler(opened);
+    }
+  });
 });
 
 function toggler(item) {
-    let accordion__body = item.querySelector(".accordion__body");
-    if (accordion__body) { // if 
-        if (!item.classList.contains('open')) {
-            item.classList.add("open");
-            accordion__body.style.height = accordion__body.scrollHeight + "px";
-        } else {
-            item.classList.remove("open");
-            accordion__body.style.height = "0px";
-        }
+  let accordion__body = item.querySelector(".accordion__body");
+  if (accordion__body) {
+    // if
+    if (!item.classList.contains("open")) {
+      item.classList.add("open");
+      accordion__body.style.height = accordion__body.scrollHeight + "px";
+    } else {
+      item.classList.remove("open");
+      accordion__body.style.height = "0px";
     }
+  }
 }
-
-
-
-
-
 
 //  Carousel
 
