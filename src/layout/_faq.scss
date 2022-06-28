@@ -60,9 +60,9 @@
 
     .description {
       @include py(var(--m-4));
+      position: relative;
       margin-left: 20px;
       @include px(20px);
-      position: relative;
 
       &::after {
         background-color: var(--primary-clr);

@@ -730,10 +730,10 @@ p {
 .accordion__body .description {
   padding-top: var(--m-4);
   padding-bottom: var(--m-4);
+  position: relative;
   margin-left: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  position: relative;
 }
 .accordion__body .description::after {
   background-color: var(--primary-clr);
