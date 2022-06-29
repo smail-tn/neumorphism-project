@@ -202,3 +202,63 @@ function moveSlide(dir = "next", el = next) {
 }
 
 //=====================
+
+const tilt = {
+  max: 20, // max tilt rotation (degrees (deg))
+  perspective: 6000, // transform perspective, the lower the more extreme the tilt gets (pixels (px))
+  scale: 0.9, // transform scale - 2 = 200%, 1.5 = 150%, etc..
+  speed: 400, // speed (transition-duration) of the enter/exit transition (milliseconds (ms))
+  easing: "cubic-bezier(.03,.98,.52,.99)", // easing (transition-timing-function) of the enter/exit transition
+};
+
+const cards = document.querySelectorAll(".services .card");
+
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", cardMouseEnter);
+  card.addEventListener("mousemove", cardMouseMove);
+  card.addEventListener("mouseleave", cardMouseLeave);
+});
+
+function cardMouseMove(event) {
+  const card = event.currentTarget;
+  const cardWidth = card.clientWidth;
+  const cardHeight = card.clientHeight;
+  const centerX = card.offsetLeft + cardWidth / 2;
+  const centerY = card.offsetTop + cardHeight / 2;
+  const mouseX = event.clientX - centerX;
+  const mouseY = event.clientY - centerY;
+  const rotateXUncapped = (+1 * tilt.max * mouseY) / (cardHeight / 2);
+  const rotateYUncapped = (-1 * tilt.max * mouseX) / (cardWidth / 2);
+  const rotateX =
+    rotateXUncapped < -tilt.max
+      ? -tilt.max
+      : rotateXUncapped > tilt.max
+      ? tilt.max
+      : rotateXUncapped;
+  const rotateY =
+    rotateYUncapped < -tilt.max
+      ? -tilt.max
+      : rotateYUncapped > tilt.max
+      ? tilt.max
+      : rotateYUncapped;
+  card.style.transform = `perspective(${tilt.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                          scale3d(${tilt.scale}, ${tilt.scale}, ${tilt.scale})`;
+}
+
+function cardMouseLeave(event) {
+  event.currentTarget.style.transform = `perspective(${tilt.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  setTransition(event);
+}
+
+function cardMouseEnter(event) {
+  setTransition(event);
+}
+
+function setTransition(event) {
+  const card = event.currentTarget;
+  clearTimeout(card.transitionTimeoutId);
+  card.style.transition = `transform ${tilt.speed}ms ${tilt.easing}`;
+  card.transitionTimeoutId = setTimeout(() => {
+    card.style.transition = "none";
+  }, tilt.speed);
+}

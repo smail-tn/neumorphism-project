@@ -624,8 +624,13 @@ audio {
   width: 80%;
 }
 
+.services {
+  padding: 0;
+}
 .services__data {
+  height: 80vh;
   gap: var(--m-10);
+  perspective: 1000px;
 }
 .services__data .card {
   transform-style: preserve-3d;
@@ -637,11 +642,8 @@ audio {
   gap: var(--gap-3);
   box-shadow: var(--shadow);
   border-radius: var(--m-4);
-  padding: var(--m-6);
-  flex: 1 1 18rem;
-}
-.services__data .card > * {
-  transform: translateZ(40px);
+  padding: var(--m-10);
+  flex: 1 1 12rem;
 }
 .services__data .card:first-child {
   background-color: var(--clr-violet);
@@ -656,14 +658,16 @@ audio {
   background-color: var(--clr-pink);
 }
 .services__data .card__img {
-  transform: translateZ(60px);
+  transform: translateZ(100px);
   color: var(--primary-clr);
 }
 .services__data .card__title {
+  transform: translateZ(100px);
   color: white;
   font-weight: var(--fw-bold);
 }
 .services__data .card__p {
+  transform: translateZ(50px);
   color: #f2f2f2;
 }
 .services__end {

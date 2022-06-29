@@ -1,8 +1,11 @@
 @use "../config/vars" as *;
 
 .services {
+  padding: 0;
   &__data {
+    height: 80vh;
     gap: var(--m-10);
+    perspective: 1000px;
     .card {
       transform-style: preserve-3d;
       transform: perspective(1000px);
@@ -11,11 +14,8 @@
       gap: var(--gap-3);
       box-shadow: var(--shadow);
       border-radius: var(--m-4);
-      padding: var(--m-6);
-      flex: 1 1 18rem;
-      &> * {
-        transform: translateZ(40px);
-      }
+      padding: var(--m-10);
+      flex: 1 1 12rem;
       &:first-child {
         background-color: var(--clr-violet);
       }
@@ -30,14 +30,16 @@
       }
 
       &__img {
-        transform: translateZ(60px);
+        transform: translateZ(100px);
         color: var(--primary-clr);
       }
       &__title {
+        transform: translateZ(100px);
         color: white;
         font-weight: var(--fw-bold);
       }
       &__p {
+        transform: translateZ(50px);
         color: #f2f2f2;
       }
     }
