@@ -49,7 +49,7 @@ function scrollIndicator() {
 
   let scrollUp = document.querySelector(".scroll__top");
 
-  let indicator = Math.round((partialScroll / height) * 100);
+  let indicator = Math.ceil((partialScroll / height) * 100);
 
   scrollUp.style.background = `conic-gradient(var(--primary-clr) ${indicator}% ,  var(--body-clr)  ${indicator}% )`;
 
