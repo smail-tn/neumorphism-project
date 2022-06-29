@@ -200,3 +200,5 @@ function moveSlide(dir = "next", el = next) {
     }
   }
 }
+
+//=====================

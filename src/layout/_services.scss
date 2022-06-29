@@ -2,20 +2,19 @@
 
 .services {
   &__data {
-    perspective: 1000px;
     gap: var(--m-10);
     .card {
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
       @include flex-center();
       flex-direction: column;
       gap: var(--gap-3);
       box-shadow: var(--shadow);
       border-radius: var(--m-4);
       padding: var(--m-6);
-      position: relative;
-      overflow: hidden;
-      flex: 1 1 20rem;
-      * {
-        transform: translateZ(100px);
+      flex: 1 1 18rem;
+      &> * {
+        transform: translateZ(40px);
       }
       &:first-child {
         background-color: var(--clr-violet);
@@ -31,6 +30,7 @@
       }
 
       &__img {
+        transform: translateZ(60px);
         color: var(--primary-clr);
       }
       &__title {

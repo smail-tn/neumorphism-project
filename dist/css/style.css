@@ -625,10 +625,11 @@ audio {
 }
 
 .services__data {
-  perspective: 1000px;
   gap: var(--m-10);
 }
 .services__data .card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -637,12 +638,10 @@ audio {
   box-shadow: var(--shadow);
   border-radius: var(--m-4);
   padding: var(--m-6);
-  position: relative;
-  overflow: hidden;
-  flex: 1 1 20rem;
+  flex: 1 1 18rem;
 }
-.services__data .card * {
-  transform: translateZ(100px);
+.services__data .card > * {
+  transform: translateZ(40px);
 }
 .services__data .card:first-child {
   background-color: var(--clr-violet);
@@ -657,6 +656,7 @@ audio {
   background-color: var(--clr-pink);
 }
 .services__data .card__img {
+  transform: translateZ(60px);
   color: var(--primary-clr);
 }
 .services__data .card__title {
