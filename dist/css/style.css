@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200;300;400;500;600;700&display=swap");
 :root {
   /* ===== NAVIGATION SITTINGS ==== */
-  --header-spacer: 29rem;
+  --header-spacer: 25rem;
   /* ======= BODY PROPERTIES ====== */
   --body-font: "Open sans", sans-serif;
+  --body-font: "M PLUS 1 Code", sans-serif;
   --line-height: 1.5;
   /* =========== clrS =========== */
   /* Change favorite clr */
@@ -65,7 +67,7 @@
 }
 @media only screen and (max-width: 575px) {
   :root {
-    --header-spacer: 25rem;
+    --header-spacer: 20rem;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -202,7 +204,7 @@ a {
   padding-right: var(--m-3);
   margin-left: auto;
   margin-right: auto;
-  max-width: 80%;
+  max-width: 90%;
 }
 @media only screen and (max-width: 575px) {
   .container {
@@ -294,12 +296,6 @@ p {
   }
 }
 
-.divider {
-  height: 1px;
-  border-top: var(--border);
-  opacity: 0.5;
-}
-
 /* ============= BUTTONS ============ */
 .btn {
   transition: all 0.15s ease-in;
@@ -348,33 +344,40 @@ p {
 
 .scroll__top {
   transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out 0.1s;
-  color: var(--primary-clr);
+  color: var(--title-clr-);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50px;
   height: 50px;
+  font-size: var(--m-4);
   z-index: 10;
   border: none;
   border-radius: 50%;
   position: fixed;
-  bottom: 20px;
+  right: 20px;
   opacity: 0;
-  left: -50px;
+  bottom: -50%;
   padding: 2px;
 }
 .scroll__top.show {
   opacity: 1;
-  left: calc(100% - 70px);
+  bottom: 15px;
 }
 .scroll__top__icon {
-  background-color: white;
+  background-color: var(--body-clr);
+  opacity: 0.5;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+.scroll__top__icon i {
+  position: relative;
+  z-index: 40;
+  opacity: 1;
 }
 
 .nav {
@@ -622,6 +625,7 @@ audio {
 }
 
 .services__data {
+  perspective: 1000px;
   gap: var(--m-10);
 }
 .services__data .card {
@@ -629,7 +633,6 @@ audio {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: var(--transition-fast);
   gap: var(--gap-3);
   box-shadow: var(--shadow);
   border-radius: var(--m-4);
@@ -637,6 +640,9 @@ audio {
   position: relative;
   overflow: hidden;
   flex: 1 1 20rem;
+}
+.services__data .card * {
+  transform: translateZ(100px);
 }
 .services__data .card:first-child {
   background-color: var(--clr-violet);
@@ -649,21 +655,6 @@ audio {
 }
 .services__data .card:nth-child(3) {
   background-color: var(--clr-pink);
-}
-.services__data .card::after {
-  background-color: var(--primary-clr);
-  transition: var(--transition-fast);
-  width: 100%;
-  height: 100%;
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -100%;
-  z-index: -1;
-  left: 0;
-}
-.services__data .card:hover {
-  transform: translateY(-10px);
 }
 .services__data .card__img {
   color: var(--primary-clr);

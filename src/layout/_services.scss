@@ -2,11 +2,11 @@
 
 .services {
   &__data {
+    perspective: 1000px;
     gap: var(--m-10);
     .card {
       @include flex-center();
       flex-direction: column;
-      transition: var(--transition-fast);
       gap: var(--gap-3);
       box-shadow: var(--shadow);
       border-radius: var(--m-4);
@@ -14,6 +14,9 @@
       position: relative;
       overflow: hidden;
       flex: 1 1 20rem;
+      * {
+        transform: translateZ(100px);
+      }
       &:first-child {
         background-color: var(--clr-violet);
       }
@@ -25,20 +28,6 @@
       }
       &:nth-child(3) {
         background-color: var(--clr-pink);
-      }
-
-      &::after {
-        background-color: var(--primary-clr);
-        transition: var(--transition-fast);
-        @include box(100%);
-        @include pseudo();
-        bottom: -100%;
-        z-index: -1;
-        left: 0;
-      }
-
-      &:hover {
-        transform: translateY(-10px);
       }
 
       &__img {

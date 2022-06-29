@@ -20,6 +20,13 @@ function replacer(el, class1, class2) {
 navToggler.addEventListener("click", function () {
   let i = this.firstElementChild;
   let nav = document.querySelector(".nav");
+  //  play audio
+  if (nav.classList.contains("show")) {
+    document.querySelector("audio.secondPlay").play();
+  } else {
+    document.querySelector("audio.firstPlay").play();
+  }
+
   nav.classList.toggle("show");
   document.body.classList.toggle("spacer");
   replacer(i, "fa-bars", "fa-times");
@@ -27,12 +34,6 @@ navToggler.addEventListener("click", function () {
   nav
     .querySelectorAll(".nav__link")
     .forEach((el) => (el.onclick = () => navToggler.click()));
-  //  play audio
-  if (nav.classList.contains("show")) {
-    document.querySelector("audio.firstPlay").play();
-  } else {
-    document.querySelector("audio.secondPlay").play();
-  }
 });
 
 //    scroll indicator
@@ -58,7 +59,7 @@ function scrollIndicator() {
 
 window.addEventListener("scroll", scrollIndicator);
 
-// activate links on scroll
+//
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
 

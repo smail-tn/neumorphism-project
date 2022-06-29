@@ -1,14 +1,17 @@
 @import "./mixins";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+// M Plus 1 code
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@200;300;400;500;600;700&display=swap");
 
 :root {
   /* ===== NAVIGATION SITTINGS ==== */
-  --header-spacer: 29rem;
+  --header-spacer: 25rem;
   @include media(sm, "max") {
-    --header-spacer: 25rem;
+    --header-spacer: 20rem;
   }
   /* ======= BODY PROPERTIES ====== */
   --body-font: "Open sans", sans-serif;
+  --body-font: "M PLUS 1 Code", sans-serif;
   --line-height: 1.5;
 
   /* =========== clrS =========== */
