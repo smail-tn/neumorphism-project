@@ -22,13 +22,17 @@ navToggler.addEventListener("click", function () {
   let nav = document.querySelector(".nav");
   nav.classList.toggle("show");
   document.body.classList.toggle("spacer");
+  replacer(i, "fa-bars", "fa-times");
 
-  nav.querySelectorAll(".nav__link").forEach((el) => {
-    el.onclick = function () {
-      document.body.classList.remove("spacer");
-      nav.classList.remove("show");
-    };
-  });
+  nav
+    .querySelectorAll(".nav__link")
+    .forEach((el) => (el.onclick = () => navToggler.click()));
+  //  play audio
+  if (nav.classList.contains("show")) {
+    document.querySelector("audio.firstPlay").play();
+  } else {
+    document.querySelector("audio.secondPlay").play();
+  }
 });
 
 //    scroll indicator
