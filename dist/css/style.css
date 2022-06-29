@@ -124,7 +124,13 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+audio,
+video {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   max-width: 100%;
   height: auto;
   display: block;
