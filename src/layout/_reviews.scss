@@ -39,9 +39,9 @@
   }
 
   &__controls {
-    display: flex;
-    justify-content: flex-end;
+    @include flex-center;
     gap: var(--m-4);
+    margin-top: var(--m-4);
     button {
       background-color: var(--body-clr) !important;
 

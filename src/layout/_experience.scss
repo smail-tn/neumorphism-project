@@ -4,17 +4,17 @@
   &__data {
     .col {
       flex: 1 1 30rem;
-      padding: var(--m-8);
+      padding: var(--m-4);
       border-radius: var(--m-6);
       box-shadow: var(--shadow);
       .card {
         @include fd("i", "i", column);
         gap: var(--m-4);
-        @include px(var(--m-10));
+        @include px(var(--m-4));
         position: relative;
         &:not(:last-child) {
           p {
-            margin-bottom: var(--m-10);
+            margin-bottom: var(--m-5);
           }
         }
         &::after,

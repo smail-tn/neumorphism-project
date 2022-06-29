@@ -333,12 +333,12 @@ p {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 2px;
   background-color: var(--primary-clr);
 }
 
@@ -754,7 +754,7 @@ p {
 
 .experience__data .col {
   flex: 1 1 30rem;
-  padding: var(--m-8);
+  padding: var(--m-4);
   border-radius: var(--m-6);
   box-shadow: var(--shadow);
 }
@@ -762,12 +762,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: var(--m-4);
-  padding-left: var(--m-10);
-  padding-right: var(--m-10);
+  padding-left: var(--m-4);
+  padding-right: var(--m-4);
   position: relative;
 }
 .experience__data .col .card:not(:last-child) p {
-  margin-bottom: var(--m-10);
+  margin-bottom: var(--m-5);
 }
 .experience__data .col .card::after, .experience__data .col .card::before {
   background-color: var(--primary-clr);
@@ -839,8 +839,10 @@ p {
 }
 .carousel__controls {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
   gap: var(--m-4);
+  margin-top: var(--m-4);
 }
 .carousel__controls button {
   background-color: var(--body-clr) !important;

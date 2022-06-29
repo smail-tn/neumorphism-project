@@ -28,10 +28,9 @@ body {
   &.spacer {
     margin-left: 0;
   }
-  @include media(sm) { 
+  @include media(sm) {
     &.spacer {
       margin-left: var(--header-spacer);
     }
-
   }
 }
