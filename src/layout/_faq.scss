@@ -3,7 +3,7 @@
 .faq {
   border-radius: 20px;
   .image {
-    min-width: 350px;
+    width: 350px;
     max-width: 100%;
     flex: 2;
     @include media(sm, "max") {
