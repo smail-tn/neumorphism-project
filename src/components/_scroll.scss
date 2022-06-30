@@ -10,7 +10,7 @@
 .scroll__top {
   transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out 0.1s;
   @include bottom-right(-50px 20px);
-  color: var(--text-clr);
+  color: var(--primary-clr);
   font-size: var(--m-4);
   @include flex-center;
   @include box(45px);
