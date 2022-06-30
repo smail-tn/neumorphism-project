@@ -4,10 +4,7 @@
   &__data {
     height: 100%;
     gap: var(--m-10);
-    perspective: 1000px;
     .card {
-      transform-style: preserve-3d;
-      transform: perspective(1000px);
       @include flex-center();
       flex-direction: column;
       gap: var(--gap-3);
@@ -29,16 +26,13 @@
       }
 
       &__img {
-        transform: translateZ(100px);
         color: var(--primary-clr);
       }
       &__title {
-        transform: translateZ(100px);
         color: white;
         font-weight: var(--fw-bold);
       }
       &__p {
-        transform: translateZ(50px);
         color: #f2f2f2;
       }
     }

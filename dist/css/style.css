@@ -10,7 +10,7 @@
   /* =========== clrS =========== */
   /* Change favorite clr */
   --border: 0.1rem solid #00000033;
-  --primary-clr: #fe0477;
+  --primary-clr: #08c7f7;
   --body-clr: #e6e6e6;
   --title-clr: #454360;
   --text-clr: #777;
@@ -336,12 +336,11 @@ p {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 2px;
   background-color: var(--primary-clr);
 }
 
@@ -651,11 +650,8 @@ audio {
 .services__data {
   height: 100%;
   gap: var(--m-10);
-  perspective: 1000px;
 }
 .services__data .card {
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -679,16 +675,13 @@ audio {
   background-color: var(--clr-pink);
 }
 .services__data .card__img {
-  transform: translateZ(100px);
   color: var(--primary-clr);
 }
 .services__data .card__title {
-  transform: translateZ(100px);
   color: white;
   font-weight: var(--fw-bold);
 }
 .services__data .card__p {
-  transform: translateZ(50px);
   color: #f2f2f2;
 }
 .services__end {
