@@ -16,6 +16,10 @@ a {
   text-transform: capitalize;
 }
 
+::selection { 
+  background-color: var(--primary-clr);
+  color: white;
+}
 // 100% === 15px
 // 62.5% ==== x
 // X= 62.5* 16 /100

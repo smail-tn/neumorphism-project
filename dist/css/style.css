@@ -196,6 +196,16 @@ a {
   text-transform: capitalize;
 }
 
+::-moz-selection {
+  background-color: var(--primary-clr);
+  color: white;
+}
+
+::selection {
+  background-color: var(--primary-clr);
+  color: white;
+}
+
 .boxs__container {
   display: flex;
   justify-content: space-between;
