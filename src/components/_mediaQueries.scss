@@ -4,9 +4,7 @@
 @include media(md, "max") {
   .home {
     margin-top: 50px;
-    // align-items: center;
     &__data {
-      margin: 0;
       flex: 1 1;
     }
 
