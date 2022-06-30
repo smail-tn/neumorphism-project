@@ -354,10 +354,6 @@ p {
   background-color: var(--primary-clr);
 }
 
-::-webkit-scrollbar-track {
-  background-color: var(--body-clr);
-}
-
 .scroll__top {
   transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out 0.1s;
   bottom: -50px;

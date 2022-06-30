@@ -7,19 +7,15 @@
   background-color: var(--primary-clr);
 }
 
-::-webkit-scrollbar-track {
-  background-color: var(--body-clr);
-}
-
 .scroll__top {
   transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out 0.1s;
-  @include bottom-right(-50px 20px) ;
+  @include bottom-right(-50px 20px);
   color: var(--text-clr);
   font-size: var(--m-4);
   @include flex-center;
   @include box(45px);
   position: fixed;
-  --radius : 10px;
+  --radius: 10px;
   border-radius: var(--radius);
   border: none;
   padding: 2px;
@@ -30,7 +26,7 @@
     bottom: 15px;
   }
   &__icon {
-    background-color:var(--body-clr);
+    background-color: var(--body-clr);
     border-radius: var(--radius);
     @include flex-center;
     @include box(100%);
