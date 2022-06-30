@@ -1,16 +1,9 @@
 @use "../config/vars" as *;
 
 .home {
-  @include flex-center;
-  height: 100vh;
-  gap: calc(var(--m-10) + 40px);
-  padding-top: 100px;
-  text-align: center;
-  &__content {
-    @include fd(center, center, column);
-    gap: 150px;
-  }
-
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: var(--m-8);
   &__title {
     text-transform: uppercase;
     color: var(--title-clr);
@@ -20,31 +13,62 @@
       font-size: var(--m-6);
     }
   }
+  &__data {
+    flex: 1 1 20rem;
+    p { 
+      max-width:500px;
+    }
+    *:not(:last-child) {
+      margin-bottom: var(--m-5);
+    }
+  }
 
   &__subtitle {
     color: var(--primary-clr);
-    font-size:var(--m-3) ;
+    font-size: var(--m-3);
   }
 
   &__button {
     margin-top: var(--m-3);
   }
+  &__img {
+    --radius: 10%;
+    position: relative;
+    background-color: var(--primary-clr);
+    transition: var(--transition);
+    border-radius: var(--radius);
+    &:hover{ 
+      padding: 0;
+      img{ 
+        transform: rotate(0) scale(1);
+      }
+    }
+    img {
+      transition: var(--transition);
+      border-radius: var(--radius);
+      transform: rotate(7deg) scaleX(1.03);
+    }
+    &:hover {
+      transform: rotate(0);
+    }
+  }
 
   &__social__icon {
-    box-shadow: var(--shadow);
+    // box-shadow: var(--shadow);
     @include flex-between;
-    max-width: 300px;
-    padding: var(--m-2);
+    flex-direction: column;
+    // max-width: 300px;
+    // padding: var(--m-2);
     gap: var(--m-3);
     border-radius: 10px;
 
     a {
       box-shadow: var(--shadow);
       color: var(--title-clr);
-      font-size: var(--m-4);
+      font-size: var(--m-3);
       @include flex-center;
-      @include box(44px);
-      border-radius: 4px;
+      @include box(40px);
+      @include circle;
       @include media(sm, "max") {
         font-size: var(--m-3);
         @include box(40px);

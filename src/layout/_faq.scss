@@ -3,9 +3,11 @@
 .faq {
   border-radius: 20px;
   .image {
-    width: 400px;
+    min-width: 350px;
+    max-width: 100%;
+    flex: 2;
     @include media(sm, "max") {
-      width: initial;
+      flex: 1;
     }
   }
 }

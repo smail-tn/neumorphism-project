@@ -20,7 +20,11 @@ a {
 // 62.5% ==== x
 // X= 62.5* 16 /100
 .boxs__container {
-  @include flexAll(center, "i", "i", wrap, var(--gap-4), "i");
+  display: flex;
+  justify-content: space-between ; 
+  align-items: center ;
+  flex-wrap: wrap ;
+  gap: var(--m-6) ;
 }
 .container {
   @include box(100%);

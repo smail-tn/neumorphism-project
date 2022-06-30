@@ -15,7 +15,7 @@ $grid-breakpoints: (
       $width: $width - 1;
     }
 
-    @media only screen and (#{$type}-width : $width) {
+    @media  (#{$type}-width : $width) {
       @content;
     }
   }

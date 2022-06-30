@@ -1,9 +1,8 @@
 @use "../config/vars" as *;
 
 .services {
-  padding: 0;
   &__data {
-    height: 80vh;
+    height: 100%;
     gap: var(--m-10);
     perspective: 1000px;
     .card {
