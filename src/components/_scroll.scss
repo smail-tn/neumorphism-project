@@ -13,28 +13,27 @@
 
 .scroll__top {
   transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out 0.1s;
-  color: var(--title-clr-);
-  @include flex-center;
-  @include box(50px);
+  @include bottom-right(-50px 20px) ;
+  color: var(--text-clr);
   font-size: var(--m-4);
-  z-index: 10;
-  border: none;
-  @include circle;
+  @include flex-center;
+  @include box(45px);
   position: fixed;
-  right: 20px;
-  opacity: 0;
-  bottom: -50%;
+  --radius : 10px;
+  border-radius: var(--radius);
+  border: none;
   padding: 2px;
+  z-index: 10;
+  opacity: 0;
   &.show {
     opacity: 1;
     bottom: 15px;
   }
   &__icon {
-    background-color: var(--body-clr);
-    opacity: 0.5;
+    background-color:var(--body-clr);
+    border-radius: var(--radius);
     @include flex-center;
     @include box(100%);
-    @include circle;
     i {
       position: relative;
       z-index: 40;

@@ -360,21 +360,22 @@ p {
 
 .scroll__top {
   transition: all 0.5s ease-in-out, opacity 0.5s ease-in-out 0.1s;
-  color: var(--title-clr-);
+  bottom: -50px;
+  right: 20px;
+  color: var(--text-clr);
+  font-size: var(--m-4);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  font-size: var(--m-4);
-  z-index: 10;
-  border: none;
-  border-radius: 50%;
+  width: 45px;
+  height: 45px;
   position: fixed;
-  right: 20px;
-  opacity: 0;
-  bottom: -50%;
+  --radius: 10px;
+  border-radius: var(--radius);
+  border: none;
   padding: 2px;
+  z-index: 10;
+  opacity: 0;
 }
 .scroll__top.show {
   opacity: 1;
@@ -382,13 +383,12 @@ p {
 }
 .scroll__top__icon {
   background-color: var(--body-clr);
-  opacity: 0.5;
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
 }
 .scroll__top__icon i {
   position: relative;
