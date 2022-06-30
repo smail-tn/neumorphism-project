@@ -567,6 +567,10 @@ audio {
   box-shadow: var(--shadow-inset);
 }
 
+.about__data {
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+}
 .about__data .boxs__container {
   flex: 1 1 40rem;
   text-align: center;
