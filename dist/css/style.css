@@ -49,10 +49,8 @@
   --m-9: 4.5rem;
   --m-10: 5rem;
   /*========== z index ==========*/
-  --z-back: -10;
-  --z-tooltip: 10;
-  --z-fixed: 100;
-  --z-modal: 1000;
+  --nav-zindex:10 ;
+  --page-overlay-zindex: 9;
   /* ============= GAP ============ */
   --gap-1: 0.5rem;
   --gap-2: 1rem;
@@ -304,6 +302,24 @@ p {
   }
 }
 
+.pageOverlay {
+  background-color: var(--primary-clr);
+  z-index: var(--page-overlay-zindex);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s;
+}
+.pageOverlay.show {
+  visibility: visible;
+  opacity: 0.7;
+  transition: visibility 1s, opacity 1s;
+}
+
 /* ============= BUTTONS ============ */
 .btn {
   transition: all 0.15s ease-in;
@@ -482,13 +498,13 @@ p {
   transition: var(--transition);
   border-right: var(--border);
   width: var(--header-spacer);
+  z-index: var(--nav-zindex);
   top: 0;
   left: 0;
   padding: var(--m-3);
   gap: var(--gap-2);
   height: 100vh;
   position: fixed;
-  z-index: 2;
 }
 .nav.show {
   transform: translateX(0);

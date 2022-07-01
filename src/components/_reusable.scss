@@ -106,3 +106,7 @@ p {
     }
   }
 }
+
+.pageOverlay {
+  @include page-overlay(var(--primary-clr), 0.7, var(--page-overlay-zindex));
+}

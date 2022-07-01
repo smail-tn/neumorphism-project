@@ -8,17 +8,13 @@
   background-color: $bg;
   z-index: $zindex;
   position: fixed;
-  height: 100vh;
-  width: 100vw;
-  display: none;
-  left: 0;
-  top: 0;
-  opacity: $opacity;
+  @include box(100vw 100vh) ; 
+  @include top-left(0)  ;
+  @include fade("hide")  ;
 
   // Fade for backdrop
   &.show {
-    opacity: $opacity;
-    display: block;
+    @include fade("show" , $opacity)
   }
 }
 
@@ -28,14 +24,14 @@
   background-color: rgba($color, $opacity);
 }
 
-@mixin fade($type) {
+@mixin fade($type: "hide" , $op : 0) {
   @if ($type == "hide") {
     visibility: hidden;
     opacity: 0;
     transition: visibility 1s, opacity 1s;
   } @else if ($type == "show") {
     visibility: visible;
-    opacity: 1;
+    opacity: $op;
     transition: visibility 1s, opacity 1s;
   }
 }
@@ -161,17 +157,6 @@
   }
 }
 
-@function torgb($color) {
-  @return red($color) + "," + green($color) + ", " + blue($color);
-}
-
-@function torgb($color) {
-  @return rgb(red($color), green($color), blue($color));
-}
-
-@function torgba($color, $alpha: 1) {
-  @return rgba(torgb($color), $alpha);
-}
 
 //  end to  rgba  function
 

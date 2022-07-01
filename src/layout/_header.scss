@@ -7,12 +7,12 @@
   transition: var(--transition);
   border-right: var(--border);
   width: var(--header-spacer);
+  z-index: var(--nav-zindex);
   @include top-left(0);
   padding: var(--m-3);
   gap: var(--gap-2);
   height: 100vh;
   position: fixed;
-  z-index: 2;
   &.show {
     transform: translateX(0);
   }

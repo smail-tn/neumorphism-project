@@ -255,8 +255,8 @@ function cursorMove() {
   let cursor2 = document.querySelector(".cursor-2");
 
   document.addEventListener("mousemove", function (e) {
-    cursor1.classList.add("active");
-    cursor2.classList.add("active");
+    cursor1.classList.add('active') ;
+    cursor2.classList.add('active') ;
     cursor1.style.cssText =
       cursor2.style.cssText = `top :${e.clientY}px; left: ${e.clientX}px;`;
   });
