@@ -217,10 +217,10 @@ clickButtons();
 //------------------
 
 function Ripple() {
-  let buttons = document.querySelectorAll(".aoh ,a ,button");
+  let buttons = document.querySelectorAll(".aoh");
   buttons.forEach((el) => {
     el.addEventListener("mouseenter", (e) => {
-      // checking the the element is already exist or not
+      // checking the the ink  element is already exist or not
       el.style.overflow = "hidden";
       if (!el.contains(el.querySelector(".ink"))) {
         let li = document.createElement("span");
@@ -229,10 +229,9 @@ function Ripple() {
       }
       // reseting  the class
       let ink = el.querySelector(".ink");
-
       / if not removing class animate it will riplle once because the the animation will end /;
-
       ink.classList.remove("animate");
+
       // setting the height and the width of the ripple button
       if (!ink.style.height && !ink.style.width) {
         let d = Math.max(el.offsetHeight, el.offsetWidth);
