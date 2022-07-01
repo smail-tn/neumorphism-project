@@ -14,9 +14,10 @@
     }
   }
   &__data {
+    margin-left: 40px;
     flex: 1 1 20rem;
-    p { 
-      max-width:500px;
+    p {
+      max-width: 500px;
     }
     *:not(:last-child) {
       margin-bottom: var(--m-5);
@@ -37,9 +38,9 @@
     background-color: var(--primary-clr);
     transition: var(--transition);
     border-radius: var(--radius);
-    &:hover{ 
+    &:hover {
       padding: 0;
-      img{ 
+      img {
         transform: rotate(0) scale(1);
       }
     }

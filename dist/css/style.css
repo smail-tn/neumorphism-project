@@ -151,10 +151,6 @@ html {
   outline: none;
 }
 
-* {
-  cursor: none !important;
-}
-
 body {
   background-color: var(--body-clr);
   line-height: var(--line-height);
@@ -237,6 +233,7 @@ a {
   color: inherit;
   font-family: inherit;
   font-weight: inherit;
+  position: relative;
 }
 
 .theme__toggler,
@@ -393,35 +390,40 @@ p {
     height: var(--dimension);
   }
 }
-.cursor-1,
+@media (hover: hover) {
+  * {
+    cursor: none !important;
+  }
+
+  .cursor-1,
 .cursor-2 {
-  pointer-events: none;
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
 
-.cursor-1 {
-  width: 50px;
-  height: 50px;
-  background-color: #ddd;
-  opacity: 0.2;
-  border: 1px solid #ddd;
-  transition: all 0.09s linear;
-}
+  .cursor-1 {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    opacity: 0.2;
+    border: 1px solid #ddd;
+    transition: all 0.09s linear;
+  }
 
-.cursor-2 {
-  z-index: 1000;
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary-clr);
-  transition: all 0.1s linear;
+  .cursor-2 {
+    z-index: 1000;
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-clr);
+    transition: all 0s linear;
+  }
 }
-
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -577,6 +579,7 @@ audio {
   }
 }
 .home__data {
+  margin-left: 40px;
   flex: 1 1 20rem;
 }
 .home__data p {
@@ -785,8 +788,8 @@ audio {
   border-radius: 20px;
 }
 .faq .image {
-  width: 350px;
-  max-width: 100%;
+  min-width: 300px;
+  max-width: 500px;
   flex: 2;
 }
 @media (max-width: 575px) {
@@ -961,6 +964,7 @@ audio {
   }
   .home__data {
     flex: 1 1;
+    margin-left: 0;
   }
   .home__img {
     display: none;

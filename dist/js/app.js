@@ -11,7 +11,7 @@ function theme_Toggler() {
 function replacer(el, class1, class2) {
   if (el.classList.contains(class1)) {
     el.classList.replace(class1, class2);
-  } else {
+  } else if (el.classList.contains(class2)) {
     el.classList.replace(class2, class1);
   }
 }
@@ -214,14 +214,14 @@ function clickButtons() {
   });
 }
 clickButtons();
-
 //------------------
 
 function Ripple() {
-  let buttons = document.querySelectorAll(".aoh");
+  let buttons = document.querySelectorAll(".aoh ,a ,button");
   buttons.forEach((el) => {
     el.addEventListener("mouseenter", (e) => {
       // checking the the element is already exist or not
+      el.style.overflow = "hidden";
       if (!el.contains(el.querySelector(".ink"))) {
         let li = document.createElement("span");
         li.classList.add("ink");
@@ -229,6 +229,9 @@ function Ripple() {
       }
       // reseting  the class
       let ink = el.querySelector(".ink");
+
+      / if not removing class animate it will riplle once because the the animation will end /;
+
       ink.classList.remove("animate");
       // setting the height and the width of the ripple button
       if (!ink.style.height && !ink.style.width) {
@@ -250,15 +253,13 @@ function Ripple() {
 
 Ripple();
 
+function cursorMove() {
+  let cursor1 = document.querySelector(".cursor-1");
+  let cursor2 = document.querySelector(".cursor-2");
 
-
-function cursorMove() { 
-
-  let cursor1 = document.querySelector('.cursor-1');
-  let cursor2 = document.querySelector('.cursor-2');
-
-  document.addEventListener('mousemove' ,function(e){  
-    cursor1.style.cssText = cursor2.style.cssText = `top :${e.clientY}px; left: ${e.clientX}px;` ; 
-  })
+  document.addEventListener("mousemove", function (e) {
+    cursor1.style.cssText =
+      cursor2.style.cssText = `top :${e.clientY}px; left: ${e.clientX}px;`;
+  });
 }
 cursorMove();

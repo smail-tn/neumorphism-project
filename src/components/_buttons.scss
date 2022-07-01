@@ -59,26 +59,31 @@
 
 // cursor
 
-.cursor-1,
-.cursor-2 {
-  pointer-events: none;
-  position: fixed;
-  display: block;
-  @include top-left(0);
-  z-index: 1000;
-  transform: translate(-50%, -50%);
-  @include circle;
-}
-.cursor-1 {
-  @include box(50px);
-  background-color: #ddd;
-  opacity: 0.2;
-  border: border(#ddd);
-  transition: all 0.09s linear;
-}
-.cursor-2 {
-  z-index: 1000;
-  @include box(8px);
-  background-color: var(--primary-clr);
-  transition: all 0.1s linear;
+@media (hover: hover) {
+  * { 
+    cursor: none !important;
+  }
+  .cursor-1,
+  .cursor-2 {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    @include top-left(0);
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    @include circle;
+  }
+  .cursor-1 {
+    @include box(50px);
+    background-color: #ddd;
+    opacity: 0.2;
+    border: border(#ddd);
+    transition: all 0.09s linear;
+  }
+  .cursor-2 {
+    z-index: 1000;
+    @include box(8px);
+    background-color: var(--primary-clr);
+    transition: all 0s linear;
+  }
 }
