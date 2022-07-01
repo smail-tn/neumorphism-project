@@ -48,8 +48,12 @@
 
 @keyframes ripple {
   // var(--dimension)     is created  just  by javascript ;
-  70% {
-    @include box(var(--dimension));
+  0% {
+    opacity: 1;
+    @include box(0);
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
@@ -68,10 +72,15 @@
     pointer-events: none;
     position: fixed;
     display: block;
-    @include top-left(0);
+    @include top-left(50%);
     z-index: 1000;
     transform: translate(-50%, -50%);
     @include circle;
+    visibility: hidden;
+
+    &.active {
+      visibility: visible;
+    }
   }
   .cursor-1 {
     @include box(50px);

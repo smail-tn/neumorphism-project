@@ -369,9 +369,13 @@ p {
 }
 
 @-webkit-keyframes ripple {
-  70% {
-    width: var(--dimension);
-    height: var(--dimension);
+  0% {
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
@@ -381,9 +385,13 @@ p {
 }
 
 @keyframes ripple {
-  70% {
-    width: var(--dimension);
-    height: var(--dimension);
+  0% {
+    opacity: 1;
+    width: 0;
+    height: 0;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
@@ -401,11 +409,16 @@ p {
     pointer-events: none;
     position: fixed;
     display: block;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     z-index: 1000;
     transform: translate(-50%, -50%);
     border-radius: 50%;
+    visibility: hidden;
+  }
+  .cursor-1.active,
+.cursor-2.active {
+    visibility: visible;
   }
 
   .cursor-1 {
