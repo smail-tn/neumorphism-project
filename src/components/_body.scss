@@ -14,7 +14,7 @@ body {
   font-size: var(--fz-normal);
   letter-spacing: 0.9px;
   color: var(--text-clr);
-  transition: var(--transition);
+  transition: all .1s linear;
 
   &.dark-theme {
     --body-clr: #222;

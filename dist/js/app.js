@@ -249,3 +249,16 @@ function Ripple() {
 }
 
 Ripple();
+
+
+
+function cursorMove() { 
+
+  let cursor1 = document.querySelector('.cursor-1');
+  let cursor2 = document.querySelector('.cursor-2');
+
+  document.addEventListener('mousemove' ,function(e){  
+    cursor1.style.cssText = cursor2.style.cssText = `top :${e.clientY}px; left: ${e.clientX}px;`
+  })
+}
+cursorMove();
