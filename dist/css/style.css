@@ -279,11 +279,10 @@ p {
 }
 
 .section {
-  width: 100%;
-  max-width: 100%;
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+  padding-top: var(--m-10);
+  padding-bottom: var(--m-10);
   min-height: 100vh;
+  width: 100%;
 }
 .section__header {
   margin-bottom: var(--section-padding);
@@ -745,13 +744,13 @@ audio {
   perspective: 1000px;
 }
 .services__data {
-  min-height: 100vh;
+  height: 100vh;
   align-content: center;
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
   gap: var(--m-4);
 }
 .services__data .card {
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
   display: flex;
   align-items: center;
   justify-content: center;

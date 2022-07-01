@@ -86,13 +86,12 @@ p {
 }
 
 .section {
-  width: 100%;
-  max-width: 100%;
-  @include py(var(--section-padding));
+  @include py(var(--m-10));
   min-height: 100vh;
+  width: 100%;
 
   &__header {
-    margin-bottom: var(--section-padding)
+    margin-bottom: var(--section-padding);
   }
   &__title {
     font-size: var(--section-font-size);

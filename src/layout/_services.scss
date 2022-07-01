@@ -4,11 +4,12 @@
   padding: 0;
   perspective: 1000px;
   &__data {
-    min-height: calc(100vh);
+    height: calc(100vh);
     align-content: center;
-    @include py(var(--section-padding)) ;
     gap: var(--m-4);
     .card {
+      transform: perspective(1000px);
+      transform-style: preserve-3d ;
       @include flex-center();
       flex-direction: column;
       gap: var(--gap-3);
