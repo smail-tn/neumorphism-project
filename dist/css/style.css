@@ -151,6 +151,10 @@ html {
   outline: none;
 }
 
+* {
+  cursor: none !important;
+}
+
 body {
   background-color: var(--body-clr);
   line-height: var(--line-height);
@@ -389,15 +393,6 @@ p {
     height: var(--dimension);
   }
 }
-.cursor-1 {
-  width: 50px;
-  height: 50px;
-  background-color: #ddd;
-  opacity: 0.2;
-  border: 1px solid #ddd;
-  transition: all 0.2s linear;
-}
-
 .cursor-1,
 .cursor-2 {
   pointer-events: none;
@@ -410,12 +405,21 @@ p {
   border-radius: 50%;
 }
 
+.cursor-1 {
+  width: 50px;
+  height: 50px;
+  background-color: #ddd;
+  opacity: 0.2;
+  border: 1px solid #ddd;
+  transition: all 0.09s linear;
+}
+
 .cursor-2 {
   z-index: 1000;
   width: 8px;
   height: 8px;
   background-color: var(--primary-clr);
-  transition: all 0.25s linear;
+  transition: all 0.1s linear;
 }
 
 ::-webkit-scrollbar {
