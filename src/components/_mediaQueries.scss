@@ -3,8 +3,6 @@
 //  home media query
 @include media(md, "max") {
   .home {
-    margin-top: 50px;
-
     flex-direction: column-reverse;
     &__data {
       text-align: center;

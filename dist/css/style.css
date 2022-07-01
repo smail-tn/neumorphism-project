@@ -957,7 +957,6 @@ audio {
 
 @media (max-width: 767px) {
   .home {
-    margin-top: 50px;
     flex-direction: column-reverse;
   }
   .home__data {
