@@ -221,22 +221,25 @@ function Ripple() {
   let buttons = document.querySelectorAll(".aoh");
   buttons.forEach((el) => {
     el.addEventListener("mouseenter", (e) => {
+      // checking the the element is already exist or not
       if (!el.contains(el.querySelector(".ink"))) {
         let li = document.createElement("span");
         li.classList.add("ink");
         el.prepend(li);
       }
-
+      // reseting  the class
       let ink = el.querySelector(".ink");
       ink.classList.remove("animate");
-
+      // setting the height and the width of the ripple button
       if (!ink.style.height && !ink.style.width) {
         let d = Math.max(el.offsetHeight, el.offsetWidth);
-        ink.style.width  = ink.style.height = d + "px";
+        document
+          .querySelector(":root")
+          .style.setProperty("--dimension", 2.5 * d + "px");
       }
       // Finding X & Y  coordinates
-      let x = e.pageX - el.offsetLeft - el.clientWidth / 2;
-      let y = e.pageY - el.offsetTop - el.clientHeight / 2;
+      let x = e.offsetX;
+      let y = e.offsetY;
 
       ink.style.top = y + "px";
       ink.style.left = x + "px";
