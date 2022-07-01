@@ -98,6 +98,7 @@ p {
     font-size: var(--section-font-size);
     font-weight: var(--fw-bolder);
     position: relative;
+    text-shadow: longShadow( black(.02));
     @include media(md, "max") {
       font-size: 30px;
     }

@@ -13,4 +13,13 @@
       display: none;
     }
   }
+  // / services /
+
+  .services {
+    &__data {
+      .card {
+        padding: var(--m-5);
+      }
+    }
+  }
 }

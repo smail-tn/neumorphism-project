@@ -302,6 +302,7 @@ p {
   font-size: var(--section-font-size);
   font-weight: var(--fw-bolder);
   position: relative;
+  text-shadow: 0px 0px rgba(0, 0, 0, 0.02), 4px 4px rgba(0, 0, 0, 0.02), 5px 5px rgba(0, 0, 0, 0.02), 6px 6px rgba(0, 0, 0, 0.02), 7px 7px rgba(0, 0, 0, 0.02), 8px 8px rgba(0, 0, 0, 0.02), 9px 9px rgba(0, 0, 0, 0.02), 10px 10px rgba(0, 0, 0, 0.02), 11px 11px rgba(0, 0, 0, 0.02), 12px 12px rgba(0, 0, 0, 0.02);
 }
 @media (max-width: 767px) {
   .section__title {
@@ -410,9 +411,8 @@ p {
   .cursor-1 {
     width: 50px;
     height: 50px;
-    background-color: #ddd;
+    background-color: var(--text-clr);
     opacity: 0.2;
-    border: 1px solid #ddd;
     transition: all 0.09s linear;
   }
 
@@ -968,5 +968,9 @@ audio {
   }
   .home__img {
     display: none;
+  }
+
+  .services__data .card {
+    padding: var(--m-5);
   }
 }

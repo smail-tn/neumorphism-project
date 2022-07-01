@@ -60,7 +60,7 @@
 // cursor
 
 @media (hover: hover) {
-  * { 
+  * {
     cursor: none !important;
   }
   .cursor-1,
@@ -75,9 +75,8 @@
   }
   .cursor-1 {
     @include box(50px);
-    background-color: #ddd;
+    background-color: var(--text-clr);
     opacity: 0.2;
-    border: border(#ddd);
     transition: all 0.09s linear;
   }
   .cursor-2 {

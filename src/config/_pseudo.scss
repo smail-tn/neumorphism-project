@@ -59,18 +59,18 @@
   }
 }
 
-@function makelongshadow($color) {
+@function longShadow($color , $size : 10) {
   $val: 0px 0px $color;
 
-  @for $i from 1 through 10 {
+  @for $i from 4 through floor($size*1.2) {
     $val: #{$val}, #{$i}px #{$i}px #{$color};
   }
 
   @return $val;
 }
 
-@mixin longshadow($color) {
-  text-shadow: makelongshadow($color);
+@mixin longShadow($color , $size) {
+  text-shadow: longShadow($color ,$size);
 }
 
 @mixin clearfix() {
