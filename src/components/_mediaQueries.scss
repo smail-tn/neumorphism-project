@@ -4,15 +4,15 @@
 @include media(md, "max") {
   .home {
     margin-top: 50px;
-  
+
     flex-direction: column-reverse;
     &__data {
       text-align: center;
       flex: none;
       margin-left: 0;
     }
-    &__social__icon { 
-      flex:none;
+    &__social__icon {
+      flex: none;
       flex-direction: row;
     }
     &__img {
