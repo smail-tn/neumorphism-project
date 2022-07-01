@@ -29,7 +29,6 @@ function nav__toggler() {
       document.querySelector("audio.secondPlay").play();
     }
     nav.classList.toggle("show");
-    document.body.classList.toggle("spacer");
     replacer(i, "fa-bars", "fa-times");
 
     nav
@@ -256,10 +255,57 @@ function cursorMove() {
   let cursor2 = document.querySelector(".cursor-2");
 
   document.addEventListener("mousemove", function (e) {
-    cursor1.classList.add('active') ;
-    cursor2.classList.add('active') ;
+    cursor1.classList.add("active");
+    cursor2.classList.add("active");
     cursor1.style.cssText =
       cursor2.style.cssText = `top :${e.clientY}px; left: ${e.clientX}px;`;
   });
 }
 cursorMove();
+
+function Tilt() {
+  let cards = document.querySelectorAll(".card");
+  const tilt = {
+    max: 15,
+    perspective: 1000,
+    scale: 1.05,
+    speed: 500,
+    easing: "cubic-bezier(.03,.98,.52,.99)",
+  };
+  cards.forEach(function (card) {
+    card.addEventListener("mouseenter", cardMouseEnter);
+    card.addEventListener("mousemove", cardMouseMove);
+    card.addEventListener("mouseleave", cardMouseLeave);
+
+    function cardMouseEnter() {
+      setTransition();
+    }
+
+    function cardMouseMove(event) {
+      const cardWidth = card.offsetWidth;
+      const cardHeight = card.offsetHeight;
+      const centerX = card.offsetLeft + cardWidth / 2;
+      const centerY = card.offsetTop + cardHeight / 2;
+      const mouseX = event.clientX - centerX;
+      const mouseY = event.clientY - centerY;
+      const rotateX = (tilt.max * mouseY) / (cardHeight / 2);
+      const rotateY = -((tilt.max * mouseX) / (cardWidth / 2));
+
+      card.style.transform = `perspective(${tilt.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                                scale3d(${tilt.scale}, ${tilt.scale}, ${tilt.scale})`;
+    }
+
+    function cardMouseLeave() {
+      card.style.transform = `perspective(${tilt.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      setTransition();
+    }
+
+    function setTransition() {
+      clearTimeout(card.transitionTimeoutId);
+      card.style.transition = `transform ${tilt.speed}ms ${tilt.easing}`;
+      card.transitionTimeoutId = setTimeout(() => {
+        card.style.transition = "";
+      }, tilt.speed);
+    }
+  });
+}

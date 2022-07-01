@@ -6,7 +6,6 @@ html {
 }
 
 body {
-  // margin-left: var(--header-spacer);
   background-color: var(--body-clr);
   line-height: var(--line-height);
   font-weight: var(--fw-medium);
@@ -24,13 +23,5 @@ body {
     --shadow: 0.4rem 0.4rem 1rem #111, -0.4rem -0.4rem 1rem #333;
     --shadow-inset: 0.4rem 0.4rem 1rem #111 inset,
       -0.4rem -0.4rem 1rem #333 inset;
-  }
-  &.spacer {
-    margin-left: 0;
-  }
-  @include media(sm) {
-    &.spacer {
-      margin-left: var(--header-spacer);
-    }
   }
 }

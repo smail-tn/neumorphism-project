@@ -1,9 +1,13 @@
 @use "../config/vars" as *;
 
 .services {
+  padding: 0;
+  perspective: 1000px;
   &__data {
-    height: 100%;
-    gap: var(--m-10);
+    min-height: calc(100vh);
+    align-content: center;
+    @include py(var(--section-padding)) ;
+    gap: var(--m-4);
     .card {
       @include flex-center();
       flex-direction: column;
@@ -11,29 +15,13 @@
       box-shadow: var(--shadow);
       border-radius: var(--m-4);
       padding: var(--m-10);
-      flex: 1 1 12rem;
-      &:first-child {
-        background-color: var(--clr-violet);
-      }
-      &:nth-child(2) {
-        background-color: var(--clr-yellow);
-        .card__p {
-          color: var(--title-clr);
-        }
-      }
-      &:nth-child(3) {
-        background-color: var(--clr-pink);
-      }
-
+      flex: 1 1 20rem;
       &__img {
         color: var(--primary-clr);
       }
       &__title {
-        color: white;
+        color: var(--title-clr);
         font-weight: var(--fw-bold);
-      }
-      &__p {
-        color: #f2f2f2;
       }
     }
   }

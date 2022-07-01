@@ -4,11 +4,17 @@
 @include media(md, "max") {
   .home {
     margin-top: 50px;
+  
+    flex-direction: column-reverse;
     &__data {
-      flex: 1 1;
+      text-align: center;
+      flex: none;
       margin-left: 0;
     }
-
+    &__social__icon { 
+      flex:none;
+      flex-direction: row;
+    }
     &__img {
       display: none;
     }
