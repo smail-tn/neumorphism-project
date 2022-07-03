@@ -34,6 +34,18 @@ function nav__toggler() {
     nav
       .querySelectorAll(".nav__link")
       .forEach((el) => (el.onclick = () => navToggler.click()));
+
+    document.addEventListener("click", function (e) {
+      let tg = e.target;
+      if (
+        tg !== nav &&
+        tg !== navToggler &&
+        tg !== navToggler.firstElementChild &&
+        nav.classList.contains("show")
+      ) {
+        navToggler.click();
+      }
+    });
   });
 }
 nav__toggler();
@@ -255,11 +267,10 @@ function cursorMove() {
   let cursor2 = document.querySelector(".cursor-2");
 
   document.addEventListener("mousemove", function (e) {
-    cursor1.classList.add('active') ;
-    cursor2.classList.add('active') ;
+    cursor1.classList.add("active");
+    cursor2.classList.add("active");
     cursor1.style.cssText =
       cursor2.style.cssText = `top :${e.clientY}px; left: ${e.clientX}px;`;
   });
 }
 cursorMove();
-
