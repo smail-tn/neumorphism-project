@@ -23,18 +23,24 @@ function nav__toggler() {
   navToggler.addEventListener("click", function () {
     let i = this.firstElementChild;
     let nav = document.querySelector(".nav");
+    // overlay
+    let overlay = document.querySelector(".pageOverlay");
+    overlay.classList.add("show");
     //  play audio
     document.querySelector("audio.firstPlay").play();
     if (nav.classList.contains("show")) {
       document.querySelector("audio.secondPlay").play();
+      overlay.classList.remove("show");
     }
     nav.classList.toggle("show");
     replacer(i, "fa-bars", "fa-times");
+    //  hiding navbar while clicking on its links
 
     nav
       .querySelectorAll(".nav__link")
       .forEach((el) => (el.onclick = () => navToggler.click()));
 
+    //  hiding navbar while clicking on page
     document.addEventListener("click", function (e) {
       let tg = e.target;
       if (
@@ -225,42 +231,39 @@ function clickButtons() {
   });
 }
 clickButtons();
-//------------------
 
-function Ripple() {
-  let buttons = document.querySelectorAll(".aoh");
-  buttons.forEach((el) => {
-    el.addEventListener("mouseenter", (e) => {
-      // checking the the ink  element is already exist or not
-      if (!el.contains(el.querySelector(".ink"))) {
-        let li = document.createElement("span");
-        li.classList.add("ink");
-        el.prepend(li);
-      }
-      // reseting  the class
-      let ink = el.querySelector(".ink");
-      /* if not removing class animate it will riplle once because the the animation will end */
-      ink.classList.remove("animate");
+// function Ripple() {
+//   let buttons = document.querySelectorAll(".aoh");
+//   buttons.forEach((el) => {
+//     el.addEventListener("mouseenter", (e) => {
+//       // checking the the ink  element is already exist or not
+//       if (!el.contains(el.querySelector(".ink"))) {
+//         let li = document.createElement("span");
+//         li.classList.add("ink");
+//         el.prepend(li);
+//       }
+//       // reseting  the class
+//       let ink = el.querySelector(".ink");
+//       /* if not removing class animate it will riplle once because the the animation will end */
+//       ink.classList.remove("animate");
 
-      // setting the height and the width of the ripple button
-      if (!ink.style.height && !ink.style.width) {
-        let d = Math.max(el.offsetHeight, el.offsetWidth);
-        document
-          .querySelector(":root")
-          .style.setProperty("--dimension", 2 * d + "px");
-      }
-      // Finding X & Y  coordinates
-      let x = e.offsetX;
-      let y = e.offsetY;
+//       // setting the height and the width of the ripple button
+//       if (!ink.style.height && !ink.style.width) {
+//         let d = Math.max(el.offsetHeight, el.offsetWidth);
+//         document
+//           .querySelector(":root")
+//           .style.setProperty("--dimension", 2 * d + "px");
+//       }
+//       // Finding X & Y  coordinates
+//       let x = e.offsetX;
+//       let y = e.offsetY;
 
-      ink.style.top = y + "px";
-      ink.style.left = x + "px";
-      ink.classList.add("animate");
-    });
-  });
-}
-
-Ripple();
+//       ink.style.top = y + "px";
+//       ink.style.left = x + "px";
+//       ink.classList.add("animate");
+//     });
+//   });
+// }
 
 function cursorMove() {
   let cursor1 = document.querySelector(".cursor-1");
