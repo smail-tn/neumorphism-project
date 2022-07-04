@@ -6,7 +6,7 @@
     min-width: 350px;
     max-width: 500px;
     flex: 2;
-    img { 
+    img {
       width: 100%;
     }
     @include media(sm, "max") {
@@ -44,12 +44,14 @@
   }
 
   &__header {
-    cursor: pointer;
+    border-bottom: var(--border);
     @include flex-between();
-    padding: 15px 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 
     &__title {
       transition: var(--transition-fast);
+      font-size: var(--fz-normal);
       font-weight: 400;
     }
 
@@ -59,8 +61,7 @@
   }
 
   &__body {
-    transition: var(--transition);
-    border-top: var(--border);
+    transition: var(--transition-fast);
     height: 0;
 
     .description {

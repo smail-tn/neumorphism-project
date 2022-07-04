@@ -9,7 +9,7 @@
   --line-height: 1.5;
   /* =========== clrS =========== */
   /* Change favorite clr */
-  --border: 0.1rem solid #00000033;
+  --border: 1px solid #00000033;
   --primary-clr: #08c7f7;
   --body-clr: #e6e6e6;
   --title-clr: #454360;
@@ -828,22 +828,23 @@ audio {
   transform: rotate(180deg);
 }
 .accordion__header {
-  cursor: pointer;
+  border-bottom: var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 .accordion__header__title {
   transition: var(--transition-fast);
+  font-size: var(--fz-normal);
   font-weight: 400;
 }
 .accordion__header__arrow {
   font-size: var(--m-3);
 }
 .accordion__body {
-  transition: var(--transition);
-  border-top: var(--border);
+  transition: var(--transition-fast);
   height: 0;
 }
 .accordion__body .description {
