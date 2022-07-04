@@ -850,6 +850,7 @@ audio {
 .accordion__body .description {
   padding-top: var(--m-4);
   padding-bottom: var(--m-4);
+  font-size: var(--fz-small);
   position: relative;
   margin-left: 20px;
   padding-left: 20px;

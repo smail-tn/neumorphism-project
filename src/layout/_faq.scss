@@ -66,6 +66,7 @@
 
     .description {
       @include py(var(--m-4));
+      font-size: var(--fz-small);
       position: relative;
       margin-left: 20px;
       @include px(20px);
