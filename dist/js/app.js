@@ -285,5 +285,30 @@ function preloader() {
     preloader.remove();
   });
 }
-
 preloader();
+
+function Ripple() {
+  let ripples = document.querySelectorAll(".ripple");
+  function createRipple(event) {
+    const el = event.currentTarget;
+    const ink = document.createElement("span");
+
+    ink.classList.add("ink");
+
+    let d = Math.max(el.clientWidth, el.clientHeight);
+    let r = d / 2;
+
+    ink.style.height = ink.style.width = d + "px";
+
+    ink.style.top = event.offsetY - r + "px";
+    ink.style.left = event.offsetX - r + "px";
+
+    el.append(ink);
+    setTimeout(() => ink.remove(), 600);
+  }
+
+  ripples.forEach((el) => (el.onclick = createRipple));
+  ripples.forEach((el) => (el.onmouseenter = createRipple));
+}
+
+Ripple();

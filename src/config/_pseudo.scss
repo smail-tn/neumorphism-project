@@ -81,6 +81,9 @@
 @function black($opacity) {
   @return rgba(0, 0, 0, $opacity);
 }
+@function white($opacity) {
+  @return rgba(255, 255, 255, $opacity);
+}
 
 // my triangle
 @mixin triangle($size, $color, $direction) {
