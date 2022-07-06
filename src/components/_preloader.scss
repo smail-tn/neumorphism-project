@@ -9,6 +9,7 @@ ul.preloader {
   height: 100vh;
   width: 100vw;
   gap: 5px;
+  
   li {
     animation: load 1s linear infinite alternate;
     background-color: white;
