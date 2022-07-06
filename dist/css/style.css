@@ -486,6 +486,58 @@ p {
   opacity: 1;
 }
 
+ul.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  gap: 5px;
+  background-color: black;
+  z-index: 1000;
+  margin: auto;
+}
+ul.preloader li {
+  height: 20px;
+  width: 10px;
+  background-color: white;
+  -webkit-animation: load 1s linear infinite alternate;
+          animation: load 1s linear infinite alternate;
+}
+ul.preloader li:first-child {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+ul.preloader li:nth-child(2) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+ul.preloader li:nth-child(3) {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+ul.preloader li:nth-child(4) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes load {
+  50% {
+    height: 60px;
+  }
+  0%, 100% {
+    height: 20px;
+  }
+}
+
+@keyframes load {
+  50% {
+    height: 60px;
+  }
+  0%, 100% {
+    height: 20px;
+  }
+}
 .nav {
   transform: translateX(calc(-1 * var(--header-spacer)));
   display: flex;

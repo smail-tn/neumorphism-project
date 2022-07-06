@@ -277,3 +277,13 @@ function cursorMove() {
   });
 }
 cursorMove();
+
+function preloader() {
+  let preloader = document.querySelector(".preloader");
+
+  window.addEventListener("load", function () {
+    preloader.remove();
+  });
+}
+
+preloader();

@@ -8,6 +8,7 @@
 @use "./components/scroll";
 
 //  importing sections
+@use "./components/preloader";
 @use "./layout/header";
 @use "./layout/home";
 @use "./layout/about";
