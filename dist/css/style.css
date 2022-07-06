@@ -495,7 +495,6 @@ ul.preloader {
   gap: 5px;
   background-color: black;
   z-index: 1000;
-  margin: auto;
 }
 ul.preloader li {
   height: 20px;
